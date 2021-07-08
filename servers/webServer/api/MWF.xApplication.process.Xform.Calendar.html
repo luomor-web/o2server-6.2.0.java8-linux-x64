@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>O2OA WebAPI: Calendar | O2OA开发平台</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+        <link type="text/css" rel="stylesheet" href="styles/styles_search.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      O2OA前台API
+    </a>
+  </h1>
+  
+      <div class="search-input" id="api-search-input">
+        <input placeholder="输入关键字搜索">
+      </div>
+  
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><ul class='nav-content' id='module:data' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-data.html">data</a></span></li></ul><ul class='nav-content' id='module:workContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-workContext.html">workContext</a></span></li></ul><ul class='nav-content' id='module:documentContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-documentContext.html">documentContext</a></span></li></ul><ul class='nav-content' id='module:form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-form.html">form</a></span></li></ul><ul class='nav-content' id='module:page' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-page.html">page</a></span></li></ul><ul class='nav-content' id='module:queryView' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryView.html">queryView</a></span></li></ul><ul class='nav-content' id='module:view' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-view.html">view</a></span></li></ul><ul class='nav-content' id='module:queryStatement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryStatement.html">queryStatement</a></span></li></ul><ul class='nav-content' id='module:statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-statement.html">statement</a></span></li></ul><ul class='nav-content' id='module:importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-importer.html">importer</a></span></li></ul><ul class='nav-content' id='module:org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-org.html">org</a></span></li></ul><ul class='nav-content' id='module:session' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-session.html">session</a></span></li></ul><ul class='nav-content' id='module:Dict' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Dict.html">Dict</a></span></li></ul><ul class='nav-content' id='module:Actions' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Actions.html">Actions</a></span></li></ul><ul class='nav-content' id='module:include' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-include.html">include</a></span></li></ul><ul class='nav-content' id='module:define' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-define.html">define</a></span></li></ul><ul class='nav-content' id='module:o2m' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-o2m.html">o2m</a></span></li></ul><ul class='nav-content' id='module:wait' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-wait.html">wait</a></span></li></ul></ul></ul><ul><li class="nav-heading">Classes</li><li class='nav-category'>FormComponents</li><ul class='nav-category-content' style='margin-left: 10px; '><ul class='nav-content' id='MWF.xApplication.process.Xform.$Input' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Input.html">$Input</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.$Module' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Module.html">$Module</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Actionbar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Actionbar.html">Actionbar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Address' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Address.html">Address</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Attachment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Attachment.html">Attachment</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Button' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Button.html">Button</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Calendar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Calendar.html">Calendar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Checkbox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Checkbox.html">Checkbox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Combox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Combox.html">Combox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Common' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Common.html">Common</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridMobile.html">DatagridMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridPC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridPC.html">DatagridPC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatableMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatableMobile.html">DatatableMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatablePC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatablePC.html">DatatablePC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Datatemplate' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Datatemplate.html">Datatemplate</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Div' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Div.html">Div</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Documenteditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Documenteditor.html">Documenteditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Form.html">Form</a></span></li></ul><ul class='nav-content' id='PortalPage' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="PortalPage.html">PortalPage</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Htmleditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Htmleditor.html">Htmleditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Iframe' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Iframe.html">Iframe</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Image' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Image.html">Image</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ImageClipper' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ImageClipper.html">ImageClipper</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Importer.html">Importer</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Label' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Label.html">Label</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Log' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Log.html">Log</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Monitor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Monitor.html">Monitor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Number' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Number.html">Number</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Office' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Office.html">Office</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Opinion' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Opinion.html">Opinion</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Org.html">Org</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Radio' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Radio.html">Radio</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ReadLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ReadLog.html">ReadLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Select' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Select.html">Select</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Sidebar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Sidebar.html">Sidebar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Source' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Source.html">Source</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SourceText' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SourceText.html">SourceText</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Stat' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Stat.html">Stat</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Statement.html">Statement</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.StatementSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.StatementSelector.html">StatementSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SubSource' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SubSource.html">SubSource</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Subform' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Subform.html">Subform</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tab' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tab.html">Tab</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table.html">Table</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table$Td' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table$Td.html">Table$Td</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textarea' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textarea.html">Textarea</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textfield' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textfield.html">Textfield</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tree' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tree.html">Tree</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.View' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.View.html">View</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ViewSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ViewSelector.html">ViewSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Widget' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Widget.html">Widget</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Author' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Author.html">Author</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Comment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Comment.html">Comment</a></span></li></ul><ul class='nav-content' id='CMSForm' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSForm.html">CMSForm</a></span></li></ul><ul class='nav-content' id='CMSLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSLog.html">CMSLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Reader' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Reader.html">Reader</a></span></li></ul></ul></ul></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#ViewFilter">ViewFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementFilter">StatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementParameter">StatementParameter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#GroupFlag">GroupFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#PersonFlag">PersonFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#RoleFlag">RoleFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#IdentityFlag">IdentityFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#UnitFlag">UnitFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatagridData">DatagridData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatableData">DatatableData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatemplateData">DatatemplateData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#TreeData">TreeData</a></span></li>
+    <ul class='nav-sub-content' style='padding: 0px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member" ><a href="MWF.xApplication.process.Xform.Calendar.html#calendar">calendar</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member" ><a href="MWF.xApplication.process.Xform.Calendar.html#descriptionNode">descriptionNode</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member" ><a href="MWF.xApplication.process.Xform.Calendar.html#node">node</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member" ><a href="MWF.xApplication.process.Xform.Calendar.html#json">json</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member" ><a href="MWF.xApplication.process.Xform.Calendar.html#form">form</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#isReadonly">isReadonly</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#isEmpty">isEmpty</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#getData">getData</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#resetData">resetData</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#setData">setData</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#validation">validation</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#hide">hide</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="MWF.xApplication.process.Xform.Calendar.html#show">show</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:complete">complete</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:clear">clear</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:change">change</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:show">show</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:hide">hide</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:queryLoad">queryLoad</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:load">load</a></span></li><li class="nav-item"><span class="nav-item-type type-event" title="event">E</span><span class="nav-item-name is-event" ><a href="MWF.xApplication.process.Xform.Calendar.html#event:postLoad">postLoad</a></span></li></ul>
+  </nav>
+</header>
+
+
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Class</p>
+    <h1 class="page-title">Calendar</h1>
+    
+
+
+
+
+<section>
+
+
+<header class="class">
+
+
+    
+        
+        <!-- <h2>Calendar</h2> -->
+
+        
+            <h5>Extends</h5>
+            
+
+
+    <ul>
+        <li><a href="MWF.xApplication.process.Xform.$Input.html">MWF.xApplication.process.Xform.$Input</a></li>
+    </ul>
+
+
+        
+
+        
+
+        
+            
+            <div class="class-description"><p>Calendar 日期组件。</p></div>
+        
+
+    
+</header>
+
+<article>
+    <div class="container-overview">
+
+    
+
+        
+            <h4 class='method-heading'>Usable Range</h4>
+            <div class="usable-range">
+                
+                    <code class='range-item'>Process</code>
+                
+                    <code class='range-item'>CMS</code>
+                
+                    <code class='range-item'>Portal</code>
+                
+            </div>
+        
+
+        
+
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">//可以在脚本中获取该组件
+//方法1：
+var field = this.form.get("fieldId"); //获取组件对象
+//方法2
+var field = this.target; //在组件本身的脚本中获取，比如事件脚本、默认值脚本、校验脚本等等</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_Calendar.js.html">x_component_process_Xform/Calendar.js</a><a href="x_component_process_Xform_Calendar.js.html#source.14">, line 14</a>
+        </li>
+    </ul>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+     
+
+    
+
+    
+
+
+    
+        <h3 class="subtitle">Members</h3>
+
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="calendar">calendar<span class="type-signature">MWF.widget.Calendar</span></h4>
+
+
+    <p class="summary"><p>日期弹出选择界面，只读情况下无此成员.</p></p>
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>MWF.widget.Calendar</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Example</h4>
+    
+    <pre><code class="language-js">var calendar = this.form.get("fieldId").calendar; //获取组件
+if(calendar)calendar.show(); //弹出选择组件</code></pre>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_Calendar.js.html">x_component_process_Xform/Calendar.js</a><a href="x_component_process_Xform_Calendar.js.html#source.203">, line 203</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="descriptionNode">descriptionNode<span class="type-signature">Element</span></h4>
+
+
+    <p class="summary"><p>描述信息节点，允许用户手工输入的组件才有此节点，只读情况下无此节点.</p></p>
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Element</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#descriptionNode">MWF.xApplication.process.Xform.$Input#descriptionNode</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.97">, line 97</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="node">node<span class="type-signature">Element</span></h4>
+
+
+    <p class="summary"><p>组件的节点，mootools封装过的Dom对象，可以直接使用原生的js和moootools方法访问和操作该对象。</p></p>
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Element</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#node">MWF.xApplication.process.Xform.$Module#node</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://mootools.net/core/docs/1.6.0/Element/Element">https://mootools.net/core/docs/1.6.0/Element/Element</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Example</h4>
+    
+    <pre><code class="language-js">//可以在脚本中获取该组件
+var field = this.form.get("fieldId"); //获取组件对象
+field.node.setStyle("font-size","12px"); //给节点设置样式</code></pre>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Module.js.html">x_component_process_Xform/$Module.js</a><a href="x_component_process_Xform_$Module.js.html#source.39">, line 39</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="json">json<span class="type-signature">JsonObject</span></h4>
+
+
+    <p class="summary"><p>组件的配置信息，比如id,类型,是否只读等等。可以在组件的queryLoad事件里修改该配置来对组件做一些改变。</p></p>
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>JsonObject</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#json">MWF.xApplication.process.Xform.$Module#json</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Example</h4>
+    
+    <pre><code class="language-js">//可以在脚本中获取该组件
+var json = this.form.get("fieldId").json; //获取组件对象
+var id = json.id; //获取组件的id
+var type = json.type; //获取组件的类型，如Textfield 为文本输入组件，Select为下拉组件
+json.isReadonly = true; //设置组件为只读。</code></pre>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Module.js.html">x_component_process_Xform/$Module.js</a><a href="x_component_process_Xform_$Module.js.html#source.52">, line 52</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="form">form<span class="type-signature"><a href="MWF.xApplication.process.Xform.Form.html">MWF.xApplication.process.Xform.Form</a></span></h4>
+
+
+    <p class="summary"><p>组件的所在表单对象.</p></p>
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code><a href="MWF.xApplication.process.Xform.Form.html">MWF.xApplication.process.Xform.Form</a></code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#form">MWF.xApplication.process.Xform.$Module#form</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Example</h4>
+    
+    <pre><code class="language-js">var form = this.form.get("fieldId").form; //获取组件所在表单对象
+var container = form.container; //获取表单容器</code></pre>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Module.js.html">x_component_process_Xform/$Module.js</a><a href="x_component_process_Xform_$Module.js.html#source.61">, line 61</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+    
+
+    
+        <h3 class="subtitle">Methods</h3>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="isReadonly">isReadonly<span class="signature">()</span><span class="return-type-signature"> &rarr; {Boolean}</span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>判断组件是否只读.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#isReadonly">MWF.xApplication.process.Xform.$Input#isReadonly</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Boolean</code>
+            
+            
+                <p>是否只读.</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">var readonly = this.form.get('subject').isReadonly();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.276">, line 276</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="isEmpty">isEmpty<span class="signature">()</span><span class="return-type-signature"> &rarr; {Boolean}</span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>判断组件值是否为空.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#isEmpty">MWF.xApplication.process.Xform.$Input#isEmpty</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Boolean</code>
+            
+            
+                <p>值是否为空.</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">if( this.form.get('subject').isEmpty() ){
+    this.form.notice('标题不能为空', 'warn');
+}</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.294">, line 294</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="getData">getData<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>获取组件值。</p>
+
+
+
+<div class="method-description">
+    <h4 class="method-heading">Description</h4>
+    <p>在脚本中使用 this.data[fieldId] 也可以获取组件值。
+区别如下：<br/>
+1、当使用Promise的时候<br/>
+使用异步函数生成器（Promise）为组件赋值的时候，用getData方法立即获取数据，可能返回修改前的值，当Promise执行完成以后，会返回修改后的值。<br/>
+this.data[fieldId] 立即获取数据，可能获取到异步函数生成器，当Promise执行完成以后，会返回修改后的值。<br/>
+<a href="https://www.yuque.com/o2oa/ixsnyt/ws07m0#EggIl">具体差异请查看链接</a><br/>
+2、当表单上没有对应组件的时候，可以使用this.data[fieldId]获取值，但是this.form.get('fieldId')无法获取到组件。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#getData">MWF.xApplication.process.Xform.$Input#getData</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+            
+                <p>组件的数据.</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">var data = this.form.get('fieldId').getData(); //没有使用promise的情况、</code></pre>
+
+    <pre><code class="language-js">//如果无法确定表单上是否有组件，需要判断
+ var data;
+ if( this.form.get('fieldId') ){ //判断表单是否有无对应组件
+     data = this.form.get('fieldId').getData();
+ }else{
+     data = this.data['fieldId']; //直接从数据中获取字段值
+ }</code></pre>
+
+    <pre><code class="language-js">//使用Promise的情况
+ var field = this.form.get("fieldId");
+ var dict = new this.Dict("test"); //test为数据字典名称
+ var promise = dict.get("tools", true); //异步使用数据字典的get方法时返回Promise，参数true表示异步
+ promise.then( function(){
+     var data = field.getData(); //此时由于异步请求已经执行完毕，getData方法获取到了数据字典的值
+ })
+ field.setData( promise );</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.328">, line 328</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="resetData">resetData<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>重置组件的值为默认值或置空。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#resetData">MWF.xApplication.process.Xform.$Input#resetData</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">this.form.get('subject').resetData();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.344">, line 344</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="setData">setData<span class="signature">(data)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>为组件赋值。</p>
+
+
+
+<div class="method-description">
+    <h4 class="method-heading">Description</h4>
+    <p>当参数为Promise的时候，请参考文档: <a href="https://www.yuque.com/o2oa/ixsnyt/ws07m0">使用Promise处理表单异步</a><br/>
+当表单上没有对应组件的时候，可以使用this.data[fieldId] = data赋值。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">data</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Promise</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>.</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#setData">MWF.xApplication.process.Xform.$Input#setData</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">this.form.get("fieldId").setData("test"); //赋文本值</code></pre>
+
+    <pre><code class="language-js">//如果无法确定表单上是否有组件，需要判断
+ if( this.form.get('fieldId') ){ //判断表单是否有无对应组件
+     this.form.get('fieldId').setData( data );
+ }else{
+     this.data['fieldId'] = data;
+ }</code></pre>
+
+    <pre><code class="language-js">//使用Promise
+ var field = this.form.get("fieldId");
+ var dict = new this.Dict("test"); //test为数据字典名称
+ var promise = dict.get("tools", true); //异步使用数据字典的get方法时返回Promise，参数true表示异步
+ field.setData( promise );</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.367">, line 367</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="validation">validation<span class="signature">(routeName<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"> &rarr; {Boolean}</span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>根据组件的校验设置进行校验。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">routeName</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>可选，路由名称.</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Input.html#validation">MWF.xApplication.process.Xform.$Input#validation</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Boolean</code>
+            
+            
+                <p>是否通过校验</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">if( !this.form.get('fieldId').validation() ){
+     return false;
+ }
+ </code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Input.js.html">x_component_process_Xform/$Input.js</a><a href="x_component_process_Xform_$Input.js.html#source.606">, line 606</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="hide">hide<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>隐藏组件.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#hide">MWF.xApplication.process.Xform.$Module#hide</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">this.form.get("fieldId").hide(); //隐藏组件</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Module.js.html">x_component_process_Xform/$Module.js</a><a href="x_component_process_Xform_$Module.js.html#source.77">, line 77</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="show">show<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+    <h4 class="method-heading" style="display:none;">Summary</h4>
+    <p>显示组件.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#show">MWF.xApplication.process.Xform.$Module#show</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">this.form.get("fieldId").show(); //显示组件</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_component_process_Xform_$Module.js.html">x_component_process_Xform/$Module.js</a><a href="x_component_process_Xform_$Module.js.html#source.88">, line 88</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+    
+
+    
+
+    
+        <h3 class="subtitle">Events</h3>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:complete">
+		complete
+	</h4>
+
+	
+	<div class="event-description">
+			<p>日期选择完成时触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:clear">
+		clear
+	</h4>
+
+	
+	<div class="event-description">
+			<p>日期选择器上点清空时触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:change">
+		change
+	</h4>
+
+	
+	<div class="event-description">
+			<p>值改变时触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:show">
+		show
+	</h4>
+
+	
+	<div class="event-description">
+			<p>显示日期选择器时触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:hide">
+		hide
+	</h4>
+
+	
+	<div class="event-description">
+			<p>隐藏日期选择器时触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:queryLoad">
+		queryLoad
+	</h4>
+
+	
+	<div class="event-description">
+			<p>组件加载前触发。</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#event:queryLoad">MWF.xApplication.process.Xform.$Module#event:queryLoad</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:load">
+		load
+	</h4>
+
+	
+	<div class="event-description">
+			<p>组件加载时触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#event:load">MWF.xApplication.process.Xform.$Module#event:load</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+            
+
+<article class="event">
+	<div class="event-type">
+		
+	</div>
+
+	<h4 class="event-name" id="event:postLoad">
+		postLoad
+	</h4>
+
+	
+	<div class="event-description">
+			<p>组件加载后触发.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div class="details">
+    
+
+    
+
+    
+        <h4 class="method-heading">Inherited From</h4>
+        <ul><li><a href="MWF.xApplication.process.Xform.$Module.html#event:postLoad">MWF.xApplication.process.Xform.$Module#event:postLoad</a></li></ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="https://www.yuque.com/o2oa/ixsnyt/hm5uft#i0zTS">组件事件说明</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+</article>
+
+        
+    
+</article>
+
+</section>
+
+
+
+
+  </div>
+</main>
+
+
+      <div class="api-search-results layout-main" id="api-search-results">
+    <div class="container">
+        <div class="search-noresults"></div>
+        <div class="search-results">
+            <div class="has-results">
+                <h1 class="search-results-title">
+                    <span class='search-results-count'></span> results matching <span class='search-query'></span>
+                </h1>
+                <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+                <h1 class="search-results-title">
+                    No results matching '<span class='search-query'></span>'
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 05 2021 19:18:04 GMT+0800 (GMT+08:00)
+  </div>
+</footer>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/prism.dev.js"></script>
+<script src="scripts/init.js" defer></script>
+
+    <script src="scripts/jquery.mark.min.js"></script>
+    <script src="scripts/search.js" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,3411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>O2OA WebAPI: queryStatement | O2OA开发平台</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+        <link type="text/css" rel="stylesheet" href="styles/styles_search.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      O2OA前台API
+    </a>
+  </h1>
+  
+      <div class="search-input" id="api-search-input">
+        <input placeholder="输入关键字搜索">
+      </div>
+  
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><ul class='nav-content' id='module:data' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-data.html">data</a></span></li></ul><ul class='nav-content' id='module:workContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-workContext.html">workContext</a></span></li></ul><ul class='nav-content' id='module:documentContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-documentContext.html">documentContext</a></span></li></ul><ul class='nav-content' id='module:form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-form.html">form</a></span></li></ul><ul class='nav-content' id='module:page' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-page.html">page</a></span></li></ul><ul class='nav-content' id='module:queryView' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryView.html">queryView</a></span></li></ul><ul class='nav-content' id='module:view' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-view.html">view</a></span></li></ul><ul class='nav-content' id='module:queryStatement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryStatement.html">queryStatement</a></span></li></ul><ul class='nav-content' id='module:statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-statement.html">statement</a></span></li></ul><ul class='nav-content' id='module:importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-importer.html">importer</a></span></li></ul><ul class='nav-content' id='module:org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-org.html">org</a></span></li></ul><ul class='nav-content' id='module:session' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-session.html">session</a></span></li></ul><ul class='nav-content' id='module:Dict' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Dict.html">Dict</a></span></li></ul><ul class='nav-content' id='module:Actions' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Actions.html">Actions</a></span></li></ul><ul class='nav-content' id='module:include' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-include.html">include</a></span></li></ul><ul class='nav-content' id='module:define' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-define.html">define</a></span></li></ul><ul class='nav-content' id='module:o2m' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-o2m.html">o2m</a></span></li></ul><ul class='nav-content' id='module:wait' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-wait.html">wait</a></span></li></ul></ul></ul><ul><li class="nav-heading">Classes</li><li class='nav-category'>FormComponents</li><ul class='nav-category-content' style='margin-left: 10px; '><ul class='nav-content' id='MWF.xApplication.process.Xform.$Input' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Input.html">$Input</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.$Module' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Module.html">$Module</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Actionbar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Actionbar.html">Actionbar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Address' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Address.html">Address</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Attachment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Attachment.html">Attachment</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Button' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Button.html">Button</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Calendar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Calendar.html">Calendar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Checkbox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Checkbox.html">Checkbox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Combox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Combox.html">Combox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Common' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Common.html">Common</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridMobile.html">DatagridMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridPC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridPC.html">DatagridPC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatableMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatableMobile.html">DatatableMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatablePC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatablePC.html">DatatablePC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Datatemplate' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Datatemplate.html">Datatemplate</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Div' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Div.html">Div</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Documenteditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Documenteditor.html">Documenteditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Form.html">Form</a></span></li></ul><ul class='nav-content' id='PortalPage' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="PortalPage.html">PortalPage</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Htmleditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Htmleditor.html">Htmleditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Iframe' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Iframe.html">Iframe</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Image' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Image.html">Image</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ImageClipper' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ImageClipper.html">ImageClipper</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Importer.html">Importer</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Label' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Label.html">Label</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Log' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Log.html">Log</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Monitor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Monitor.html">Monitor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Number' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Number.html">Number</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Office' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Office.html">Office</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Opinion' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Opinion.html">Opinion</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Org.html">Org</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Radio' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Radio.html">Radio</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ReadLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ReadLog.html">ReadLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Select' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Select.html">Select</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Sidebar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Sidebar.html">Sidebar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Source' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Source.html">Source</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SourceText' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SourceText.html">SourceText</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Stat' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Stat.html">Stat</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Statement.html">Statement</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.StatementSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.StatementSelector.html">StatementSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SubSource' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SubSource.html">SubSource</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Subform' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Subform.html">Subform</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tab' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tab.html">Tab</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table.html">Table</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table$Td' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table$Td.html">Table$Td</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textarea' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textarea.html">Textarea</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textfield' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textfield.html">Textfield</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tree' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tree.html">Tree</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.View' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.View.html">View</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ViewSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ViewSelector.html">ViewSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Widget' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Widget.html">Widget</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Author' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Author.html">Author</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Comment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Comment.html">Comment</a></span></li></ul><ul class='nav-content' id='CMSForm' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSForm.html">CMSForm</a></span></li></ul><ul class='nav-content' id='CMSLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSLog.html">CMSLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Reader' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Reader.html">Reader</a></span></li></ul></ul></ul></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#ViewFilter">ViewFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementFilter">StatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementParameter">StatementParameter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#GroupFlag">GroupFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#PersonFlag">PersonFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#RoleFlag">RoleFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#IdentityFlag">IdentityFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#UnitFlag">UnitFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatagridData">DatagridData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatableData">DatatableData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatemplateData">DatatemplateData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#TreeData">TreeData</a></span></li>
+    <ul class='nav-sub-content' style='padding: 0px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.getParentEnvironment">getParentEnvironment</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.getPageInfor">getPageInfor</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.getPageData">getPageData</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.toPage">toPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.selectAll">selectAll</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.unSelectAll">unSelectAll</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.getSelectedData">getSelectedData</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.node">node</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.getStatementInfor">getStatementInfor</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.setStatementFilter">setStatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.switchStatement">switchStatement</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.confirm">confirm</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.alert">alert</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.notice">notice</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.addEvent">addEvent</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openWork">openWork</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openJob">openJob</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openDocument">openDocument</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openPortal">openPortal</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openCMS">openCMS</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openProcess">openProcess</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.openApplication">openApplication</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.createDocument">createDocument</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-queryStatement.html#.startProcess">startProcess</a></span></li></ul>
+  </nav>
+</header>
+
+
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Module</p>
+    <h1 class="page-title">queryStatement</h1>
+    
+
+
+
+
+<section>
+
+
+<header class="not-class">
+
+
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+
+    
+        
+            <div class="description"><p>当查询设计中使用了select语句，并且配置了视图，可以在查询视图中使用本章API。<br/>
+queryStatement对象在查询视图中可用。它的很多方法与queryView类似。<b>（仅前端脚本可用）</b><br/></p></div>
+        
+
+        
+            <h4 class='method-heading'>Usable Range</h4>
+            <div class="usable-range">
+                
+                    <code class='range-item'>QueryStatement</code>
+                
+            </div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">//您可以在查询视图中，通过this来获取queryStatement对象，如下：
+var queryStatement = this.queryStatement;</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3522">, line 3522</a>
+        </li>
+    </ul>
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+     
+
+    
+
+    
+
+
+    
+
+    
+        <h3 class="subtitle">Methods</h3>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".getParentEnvironment">getParentEnvironment<span class="signature">()</span><span class="return-type-signature"> &rarr; {MWF.xScript.Environment|MWF.xScript.CMSEnvironment}</span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>当查询视图被嵌入到门户页面、流程表单或内容管理表单的时候，可以在查询视图写脚本的地方通过这个方法来获取页面或表单的上下文。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.getParentEnvironment();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>MWF.xScript.Environment</code>
+            
+                <code>MWF.xScript.CMSEnvironment</code>
+            
+            
+                <p>页面或表单的上下文.</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">var env = this.queryStatement.getParentEnvironment(); //当视图被嵌入到页面的时候，可以在视图里获取页面的上下文
+env.page.toPortal( "公文门户" ); //调用page的toPage() 跳转到其他门户</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3546">, line 3546</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".getPageInfor">getPageInfor<span class="signature">()</span><span class="return-type-signature"> &rarr; {Object}</span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>获取查询视图当前页的基本信息。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.getPageInfor();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Object</code>
+            
+            
+                <p>当前页的信息，格式如下:</p>
+<pre><code class='language-js'>{
+    "pages": 3, //总页数
+    "perPageCount": 50, //每页的条数
+    "currentPageNumber": 1 // 当前页数
+}
+</code></pre>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3559">, line 3559</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".getPageData">getPageData<span class="signature">()</span><span class="return-type-signature"> &rarr; {Array.&lt;Object>|Array.&lt;Array>}</span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>获取当前页的数据。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">var data = this.queryStatement.getPageData();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Array.&lt;Object></code>
+            
+                <code>Array.&lt;Array></code>
+            
+            
+                <p>当前页数据。</p>
+<div>数据格式和 jpql 语句的写法有关</div>
+如:  "select o from table o" 返回 json数组
+<pre><code class='language-js'>[
+     {
+        "id" : "id1",
+        "title" : "title1"
+    },
+     {
+        "id" : "id2",
+        "title" : "title2"
+    },
+     ...
+]
+</code></pre>
+如："select id, title from table o" 返回 二维数组：
+<pre><code class='language-js'>[
+     ["id1", "title1"],
+     ["id2", "title2"],
+     ...
+]
+</code></pre>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3575">, line 3575</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".toPage">toPage<span class="signature">(pageNumber, callback<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>跳转到指定的页面。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">var data = this.queryStatement.toPage( pageNumber, callback );</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">pageNumber</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Number</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>需要跳转的页码。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">callback</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>跳转的页面数据加载完成以后的回调方法。</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">//　跳转到第2页并且获取该页的数据。
+this.queryStatement.toPage( 2, function(){
+     var data = this.queryStatement.getPageData();
+}.bind(this) )</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3606">, line 3606</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".selectAll">selectAll<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>当查询视图设置了允许多选的时候，可以通过这个方法全部选中当前页面的条目。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.selectAll();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3622">, line 3622</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".unSelectAll">unSelectAll<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>当查询视图设置了允许多选的时候，可以通过这个方法取消选中的条目。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.unSelectAll();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3631">, line 3631</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".getSelectedData">getSelectedData<span class="signature">()</span><span class="return-type-signature"> &rarr; {Array.&lt;Object>|Array.&lt;Array>}</span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>获取选中的条目的数据。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">var data = this.queryStatement.getSelectedData();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Array.&lt;Object></code>
+            
+                <code>Array.&lt;Array></code>
+            
+            
+                <p>选中的条目的数据。</p>
+<div>数据格式和 jpql 语句的写法有关</div>
+如:  "select o from table o" 返回 json数组
+<pre><code class='language-js'>[
+     {
+        "id" : "id1",
+        "title" : "title1"
+    },
+     {
+        "id" : "id2",
+        "title" : "title2"
+    },
+     ...
+]
+</code></pre>
+如："select id, title from table o" 返回 二维数组：
+<pre><code class='language-js'>[
+     ["id1", "title1"],
+     ["id2", "title2"],
+     ...
+]
+</code></pre>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3640">, line 3640</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".node">node<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>获取queryStatement对应的DOM对象。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.node">module:form.node</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3671">, line 3671</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".getStatementInfor">getStatementInfor<span class="signature">()</span><span class="return-type-signature"> &rarr; {Object}</span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>获取查询的配置信息。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.getStatementInfor();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Object</code>
+            
+            
+                <p>查询的配置信息.</p>
+<pre><code class='language-js'>{
+   "query": "26d21c71-5114-4496-8ca1-a69e56324841", //所属应用id
+   "id": "ee334220-66d3-4f78-afce-8ccf6b995c8c", //查询id
+   "name": "测试查询", //名称
+   "alias": "", //别名
+   "description": "", //描述
+   "table": "", //自建表的id
+   "entityClassName": "com.x.processplatform.core.entity.content.Task", //系统表表名
+   "entityCategory": "official", //表类型 official(系统表) 或 dynamic(自建表)
+   "format": "jpql", //语句类型,jpql 或者 script(脚本)
+   "type": "select", //select/update/delete
+   "data": "SELECT o FROM Task o where o.person = :person", //查询语句
+   "countData": "SELECT count(o.id) FROM Task o where o.person = :person", //总数语句
+   "countScriptText" : "", //总数语句脚本
+   "scriptText" : "", //查询语句脚本
+   "viewJson": { ... } //视图相关信息
+}</code></pre>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3702">, line 3702</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".setStatementFilter">setStatementFilter<span class="signature">(filter<span class="signature-attributes">opt</span>, parameter<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>增加查询语句where子句的过滤条件。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.setStatementFilter( filter, parameter, callback );</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">filter</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#StatementFilter">StatementFilter</a>></code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Null</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>过滤条件。<br/>
+过滤条件。当不传参数、参数为null或为空数组的情况下，表示清空非视图默认的过滤条件。<br/>
+如果传入非空数组的时候，参数如下：</p>
+<pre><code class='language-js'>[
+   {
+     "path":"o.title",
+     "comparison":"like",
+     "value":"关于",
+     "formatType":"textValue"
+ }
+]
+</code></pre></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">parameter</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code><a href="global.html#StatementParameter">StatementParameter</a></code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>过滤条件。对查询语句where子句的形如&quot;:person&quot;的参数部分进行赋值，参数如下：</p>
+<pre><code class='language-js'>
+//假设语句为 select count(o.id) from Read o where (o.person = :person) and (o.startTime > :startTime) and (o.applicationName like :applicationName) and (o.processName = :processName)。
+//那么可能的参数如下：
+{
+   "person" : "", //出于安全考虑参数名称为下列值时，不需要填写参数值，后台默认赋值，person(当前人),identityList(当前人身份列表),unitList(当前人所在直接组织), unitAllList(当前人所在所有组织), groupList(当前人所在群组)
+   "startTime" : (new Date("2020-01-01")), //如果对比的是日期，需要传入 Date 类型
+   "applicationName" : "%test%", //如果运算符用的是 like, noLike，模糊查询
+   "processName" : "test流程" //其他写确定的值
+}
+</code></pre></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">callback</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>过滤完成并重新加载数据后的回调方法。</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3901">, line 3901</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".switchStatement">switchStatement<span class="signature">(options)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>把当前查询视图切换成另外一个查询视图。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">this.queryStatement.switchStatement( options );</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">options</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>需要跳转的参数配置。参数说明如下：</p>
+<div>下列说明的filter属性参考<a href='global.html#StatementFilter'>StatementFilter</a>，
+parameter属性参考<a href='global.html#StatementParameter'>StatementParameter</a></div>
+<pre><code class='language-js'>this.queryStatement.switchStatement({
+    "statementId": statementId, //必选，查询的名称、别名、id
+    "isTitle": "yes", //可选，是否显示视图的标题行，可选值有:yes no
+    "select": "multi", //可选，是否允许新视图选择，如果不传，则使用原视图的配置, 可选值有： 不允许选择 none, 单选 single，多选 multi
+    "showActionbar": false, //可选，是否显示操作条
+    "filter": [  //可选，增加查询语句where子句的过滤条件
+      {
+        "path": "o.title",
+        "title": "标题",
+        "type": "filter",
+        "comparison": "like",
+        "formatType": "textValue",
+        "value": "测试"
+      }
+    ],
+    //假设语句为 select count(o.id) from Read o where (o.person = :person) and (o.startTime > :startTime) and (o.applicationName like :applicationName) and (o.processName = :processName)
+    "parameter" : { //可选，对查询语句where语句的形如":person"的参数部分进行赋值
+      "person" : "", //出于安全考虑参数名称为下列值时，不需要填写参数值，后台默认赋值，person(当前人),identityList(当前人身份列表),unitList(当前人所在直接组织), unitAllList(当前人所在所有组织), groupList(当前人所在群组)
+      "startTime" : (new Date("2020-01-01")), //如果对比的是日期，需要传入 Date 类型
+      "applicationName" : "%test%", //如果运算符用的是 like, noLike，模糊查询
+      "processName" : "test流程" //其他写确定的值
+    }
+  })
+</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.3972">, line 3972</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".confirm">confirm<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>弹出一个确认框。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.confirm">module:form.confirm</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4049">, line 4049</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".alert">alert<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>显示一个带关闭按钮的信息框。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.alert">module:form.alert</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4078">, line 4078</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".notice">notice<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>显示一个信息框。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.notice">module:form.notice</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4088">, line 4088</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".addEvent">addEvent<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>给视图添加事件。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.addEvent">module:form.addEvent</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4098">, line 4098</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openWork">openWork<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>打开一个在流转或已完成的流程实例。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openWork">module:form.openWork</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4116">, line 4116</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openJob">openJob<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>根据流程的jobId打开工作。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openJob">module:form.openJob</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4131">, line 4131</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openDocument">openDocument<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>打开一个内容管理文档。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openDocument">module:form.openDocument</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4230">, line 4230</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openPortal">openPortal<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>打开一个门户页面。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openPortal">module:form.openPortal</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4243">, line 4243</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openCMS">openCMS<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>打开一个内容管理栏目。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openCMS">module:form.openCMS</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4275">, line 4275</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openProcess">openProcess<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>打开一个流程应用。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openProcess">module:form.openProcess</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4293">, line 4293</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".openApplication">openApplication<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>打开一个任意一个component应用。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.openApplication">module:form.openApplication</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4311">, line 4311</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".createDocument">createDocument<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>创建一个内容管理文档。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.createDocument">module:form.createDocument</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4321">, line 4321</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".startProcess">startProcess<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>启动一个流程实例。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="module-form.html#.startProcess">module:form.startProcess</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.4376">, line 4376</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+  </div>
+</main>
+
+
+      <div class="api-search-results layout-main" id="api-search-results">
+    <div class="container">
+        <div class="search-noresults"></div>
+        <div class="search-results">
+            <div class="has-results">
+                <h1 class="search-results-title">
+                    <span class='search-results-count'></span> results matching <span class='search-query'></span>
+                </h1>
+                <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+                <h1 class="search-results-title">
+                    No results matching '<span class='search-query'></span>'
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 05 2021 19:18:04 GMT+0800 (GMT+08:00)
+  </div>
+</footer>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/prism.dev.js"></script>
+<script src="scripts/init.js" defer></script>
+
+    <script src="scripts/jquery.mark.min.js"></script>
+    <script src="scripts/search.js" defer></script>
+
+
+</body>
+</html>

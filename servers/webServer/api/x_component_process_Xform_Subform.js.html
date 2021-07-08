@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>O2OA WebAPI: x_component_process_Xform/Subform.js | O2OA开发平台</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+        <link type="text/css" rel="stylesheet" href="styles/styles_search.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      O2OA前台API
+    </a>
+  </h1>
+  
+      <div class="search-input" id="api-search-input">
+        <input placeholder="输入关键字搜索">
+      </div>
+  
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><ul class='nav-content' id='module:data' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-data.html">data</a></span></li></ul><ul class='nav-content' id='module:workContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-workContext.html">workContext</a></span></li></ul><ul class='nav-content' id='module:documentContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-documentContext.html">documentContext</a></span></li></ul><ul class='nav-content' id='module:form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-form.html">form</a></span></li></ul><ul class='nav-content' id='module:page' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-page.html">page</a></span></li></ul><ul class='nav-content' id='module:queryView' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryView.html">queryView</a></span></li></ul><ul class='nav-content' id='module:view' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-view.html">view</a></span></li></ul><ul class='nav-content' id='module:queryStatement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryStatement.html">queryStatement</a></span></li></ul><ul class='nav-content' id='module:statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-statement.html">statement</a></span></li></ul><ul class='nav-content' id='module:importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-importer.html">importer</a></span></li></ul><ul class='nav-content' id='module:org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-org.html">org</a></span></li></ul><ul class='nav-content' id='module:session' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-session.html">session</a></span></li></ul><ul class='nav-content' id='module:Dict' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Dict.html">Dict</a></span></li></ul><ul class='nav-content' id='module:Actions' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Actions.html">Actions</a></span></li></ul><ul class='nav-content' id='module:include' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-include.html">include</a></span></li></ul><ul class='nav-content' id='module:define' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-define.html">define</a></span></li></ul><ul class='nav-content' id='module:o2m' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-o2m.html">o2m</a></span></li></ul><ul class='nav-content' id='module:wait' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-wait.html">wait</a></span></li></ul></ul></ul><ul><li class="nav-heading">Classes</li><li class='nav-category'>FormComponents</li><ul class='nav-category-content' style='margin-left: 10px; '><ul class='nav-content' id='MWF.xApplication.process.Xform.$Input' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Input.html">$Input</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.$Module' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Module.html">$Module</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Actionbar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Actionbar.html">Actionbar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Address' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Address.html">Address</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Attachment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Attachment.html">Attachment</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Button' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Button.html">Button</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Calendar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Calendar.html">Calendar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Checkbox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Checkbox.html">Checkbox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Combox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Combox.html">Combox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Common' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Common.html">Common</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridMobile.html">DatagridMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridPC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridPC.html">DatagridPC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatableMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatableMobile.html">DatatableMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatablePC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatablePC.html">DatatablePC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Datatemplate' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Datatemplate.html">Datatemplate</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Div' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Div.html">Div</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Documenteditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Documenteditor.html">Documenteditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Form.html">Form</a></span></li></ul><ul class='nav-content' id='PortalPage' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="PortalPage.html">PortalPage</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Htmleditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Htmleditor.html">Htmleditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Iframe' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Iframe.html">Iframe</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Image' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Image.html">Image</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ImageClipper' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ImageClipper.html">ImageClipper</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Importer.html">Importer</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Label' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Label.html">Label</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Log' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Log.html">Log</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Monitor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Monitor.html">Monitor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Number' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Number.html">Number</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Office' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Office.html">Office</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Opinion' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Opinion.html">Opinion</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Org.html">Org</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Radio' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Radio.html">Radio</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ReadLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ReadLog.html">ReadLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Select' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Select.html">Select</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Sidebar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Sidebar.html">Sidebar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Source' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Source.html">Source</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SourceText' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SourceText.html">SourceText</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Stat' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Stat.html">Stat</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Statement.html">Statement</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.StatementSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.StatementSelector.html">StatementSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SubSource' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SubSource.html">SubSource</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Subform' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Subform.html">Subform</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tab' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tab.html">Tab</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table.html">Table</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table$Td' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table$Td.html">Table$Td</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textarea' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textarea.html">Textarea</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textfield' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textfield.html">Textfield</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tree' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tree.html">Tree</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.View' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.View.html">View</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ViewSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ViewSelector.html">ViewSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Widget' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Widget.html">Widget</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Author' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Author.html">Author</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Comment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Comment.html">Comment</a></span></li></ul><ul class='nav-content' id='CMSForm' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSForm.html">CMSForm</a></span></li></ul><ul class='nav-content' id='CMSLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSLog.html">CMSLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Reader' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Reader.html">Reader</a></span></li></ul></ul></ul></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#ViewFilter">ViewFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementFilter">StatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementParameter">StatementParameter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#GroupFlag">GroupFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#PersonFlag">PersonFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#RoleFlag">RoleFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#IdentityFlag">IdentityFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#UnitFlag">UnitFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatagridData">DatagridData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatableData">DatatableData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatemplateData">DatatemplateData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#TreeData">TreeData</a></span></li>
+    
+  </nav>
+</header>
+
+
+<main class="layout-main  layout-content--source">
+  <div class="container">
+    <p class="page-kind">source</p>
+    <h1 class="page-title">x_component_process_Xform/Subform.js</h1>
+    
+
+
+
+    
+
+<section>
+    <article>
+        <pre id="source" class="source-page line-numbers"><code class="language-js">MWF.xDesktop.requireApp("process.Xform", "$Module", null, false);
+/** @class Subform 子表单组件。
+ * @example
+ * //可以在脚本中获取该组件
+ * //方法1：
+ * var subform = this.form.get("fieldId"); //获取组件
+ * //方法2
+ * var subform = this.target; //在组件本身的脚本中获取
+ * @extends MWF.xApplication.process.Xform.$Module
+ * @o2category FormComponents
+ * @o2range {Process|CMS}
+ * @hideconstructor
+ */
+MWF.xApplication.process.Xform.Subform = MWF.APPSubform = new Class(
+    /** @lends MWF.xApplication.process.Xform.Subform# */
+{
+    Extends: MWF.APP$Module,
+
+    _loadUserInterface: function () {
+        this.node.empty();
+
+        this.modules = [];
+        this.moduleList = {};
+
+        if (this.json.isDelay) {
+            if (this.form.subformLoadedCount) {
+                this.form.subformLoadedCount++;
+            } else {
+                this.form.subformLoadedCount = 1
+            }
+            this.form.checkSubformLoaded();
+            this.checked = true;
+        } else {
+
+            this.getSubform(function () {
+                this.loadSubform();
+            }.bind(this));
+        }
+    },
+    /**
+     * @summary 当子表单被设置为延迟加载，通过active方法激活
+     * @param {Function} callback
+     * @example
+     * var subform = this.form.get("fieldId");
+     * subform.active(function(){
+     *     //do someting
+     * })
+     */
+    active: function (callback) {
+        if (!this.loaded) {
+            this.reload(callback)
+        } else {
+            if (callback) callback();
+        }
+    },
+    /**
+     * @summary 重新加载子表单
+     * @param {Function} callback
+     * @example
+     * this.form.get("fieldId").reload(function(){
+     *     //do someting
+     * })
+     */
+    reload: function (callback) {
+        this.clean();
+
+        this.getSubform(function () {
+            this.loadSubform();
+            if (callback) callback();
+        }.bind(this));
+    },
+    clean: function(){
+        (this.modules || []).each(function(module){
+            this.form.modules.erase(module);
+        }.bind(this));
+
+        Object.each(this.moduleList || {}, function (module, formKey) {
+            delete this.form.json.moduleList[formKey];
+        }.bind(this));
+
+        if( this.subformData &amp;&amp; this.subformData.json.id ){
+            var id = this.subformData.json.id;
+            if( this.form.subformLoaded &amp;&amp; this.form.subformLoaded.length ){
+                this.form.subformLoaded.erase(id);
+            }
+            if( this.parentformIdList &amp;&amp; this.parentformIdList.length){
+                this.parentformIdList.erase(id);
+            }
+        }
+
+        this.modules = [];
+        this.moduleList = {};
+
+        this.node.empty();
+    },
+    loadCss: function () {
+        if (this.subformData.json.css &amp;&amp; this.subformData.json.css.code) {
+            var cssText = this.form.parseCSS(this.subformData.json.css.code);
+            var rex = new RegExp("(.+)(?=\\{)", "g");
+            var match;
+            var id = this.form.json.id.replace(/\-/g, "");
+            while ((match = rex.exec(cssText)) !== null) {
+                var prefix = ".css" + id + " ";
+                var rule = prefix + match[0];
+                cssText = cssText.substring(0, match.index) + rule + cssText.substring(rex.lastIndex, cssText.length);
+                rex.lastIndex = rex.lastIndex + prefix.length;
+            }
+
+            var styleNode = $("style" + this.form.json.id);
+            if (!styleNode) {
+                var styleNode = document.createElement("style");
+                styleNode.setAttribute("type", "text/css");
+                styleNode.id = "style" + this.form.json.id;
+                styleNode.inject(this.form.container, "before");
+            }
+
+            if (styleNode.styleSheet) {
+                var setFunc = function () {
+                    styleNode.styleSheet.cssText += cssText;
+                };
+                if (styleNode.styleSheet.disabled) {
+                    setTimeout(setFunc, 10);
+                } else {
+                    setFunc();
+                }
+            } else {
+                var cssTextNode = document.createTextNode(cssText);
+                styleNode.appendChild(cssTextNode);
+            }
+        }
+    },
+    checkSubformNested: function (id) {
+        if (!id) return true;
+        if (this.parentformIdList) {
+            return !this.parentformIdList.contains(id);
+        } else {
+            return ![this.form.json.id].contains(id);
+        }
+    },
+    checkSubformUnique: function (id) {
+        if (!id) return true;
+        if (!this.form.subformLoaded) return true;
+        return !this.form.subformLoaded.contains(id);
+    },
+    getParentformIdList: function () {
+        var parentformIdList;
+        if (this.parentformIdList) {
+            parentformIdList = Array.clone(this.parentformIdList);
+            parentformIdList.push(this.subformData.json.id)
+        } else {
+            parentformIdList = [this.form.json.id, this.subformData.json.id];
+        }
+        return parentformIdList;
+    },
+    loadSubform: function () {
+        if (this.subformData) {
+            if (!this.checkSubformNested(this.subformData.json.id)) {
+                this.form.notice(MWF.xApplication.process.Xform.LP.subformNestedError, "error");
+            } else if (!this.checkSubformUnique(this.subformData.json.id)) {
+                this.form.notice(MWF.xApplication.process.Xform.LP.subformUniqueError, "error");
+            } else {
+                //this.form.addEvent("postLoad", function(){
+
+                this.loadCss();
+
+                this.modules = [];
+                this.moduleList = {};
+
+                this.node.set("html", this.subformData.html);
+                Object.each(this.subformData.json.moduleList, function (module, key) {
+                    var formKey = key;
+                    if (this.form.json.moduleList[key]) {
+                        formKey = this.json.id + "_" + key;
+                        var moduleNode = this.node.getElement("#" + key);
+                        if (moduleNode) moduleNode.set("id", formKey);
+                        module.id = formKey;
+                    }
+                    this.form.json.moduleList[formKey] = module;
+                    this.moduleList[formKey] = module;
+                }.bind(this));
+
+                var moduleNodes = this.form._getModuleNodes(this.node);
+                moduleNodes.each(function (node) {
+                    if (node.get("MWFtype") !== "form") {
+                        var _self = this;
+                        var json = this.form._getDomjson(node);
+                        //if( json.type === "Subform" || json.moduleName === "subform" )this.form.subformCount++;
+                        var module = this.form._loadModule(json, node, function () {
+                            this.parentformIdList = _self.getParentformIdList();
+                        });
+                        this.form.modules.push(module);
+                        this.modules.push(module);
+                    }
+                }.bind(this));
+
+                this.form.subformLoaded.push(this.subformData.json.id);
+
+                //}.bind(this));
+            }
+        }
+        if (!this.checked) {
+            if (this.form.subformLoadedCount) {
+                this.form.subformLoadedCount++;
+            } else {
+                this.form.subformLoadedCount = 1
+            }
+            this.form.checkSubformLoaded();
+        }
+        //console.log( "add subformLoadedCount , this.form.subformLoadedCount = "+ this.form.subformLoadedCount)
+        this.loaded = true;
+        this.checked = true;
+    },
+    getSubform: function (callback) {
+        var method = (this.form.json.mode !== "Mobile" &amp;&amp; !layout.mobile) ? "getForm" : "getFormMobile";
+
+        if (this.json.subformType === "script") {
+            if (this.json.subformScript &amp;&amp; this.json.subformScript.code) {
+                var data = this.form.Macro.exec(this.json.subformScript.code, this);
+                if (data) {
+                    var formName, app;
+                    if (typeOf(data) === "string") {
+                        formName = data;
+                    } else {
+                        if (data.application) app = data.application;
+                        if (data.subform) formName = data.subform;
+                    }
+                    if (formName) {
+                        if (!app) app = (this.form.businessData.work || this.form.businessData.workCompleted).application;
+                        MWF.Actions.get("x_processplatform_assemble_surface")[method](formName, app, function (json) {
+                            this.getSubformData(json.data);
+                            if (callback) callback();
+                        }.bind(this));
+                    } else {
+                        if (callback) callback();
+                    }
+                } else {
+                    if (callback) callback();
+                }
+            }
+        } else {
+            if (this.json.subformSelected &amp;&amp; this.json.subformSelected !== "none") {
+                var subformData = (this.form.app.relatedFormMap) ? this.form.app.relatedFormMap[this.json.subformSelected] : null;
+                if (subformData) {
+                    this.getSubformData({"data": subformData.data});
+                    if (callback) callback();
+                } else {
+                    var app;
+                    if (this.json.subformAppSelected) {
+                        app = this.json.subformAppSelected;
+                    } else {
+                        app = (this.form.businessData.work || this.form.businessData.workCompleted).application;
+                    }
+                    MWF.Actions.get("x_processplatform_assemble_surface")[method](this.json.subformSelected, app, function (json) {
+                        this.getSubformData(json.data);
+                        if (callback) callback();
+                    }.bind(this));
+                }
+            } else {
+                if (callback) callback();
+            }
+        }
+    },
+    getSubformData: function (data) {
+        if (!data || typeOf(data) !== "object") return;
+        var subformDataStr = null;
+        // if ( this.form.json.mode !== "Mobile" &amp;&amp; !layout.mobile){
+        //     subformDataStr = data.data;
+        // }else{
+        //     subformDataStr = data.mobileData;
+        // }
+        subformDataStr = data.data;
+        this.subformData = null;
+        if (subformDataStr) {
+            var jsonStr = o2.bindJson(MWF.decodeJsonString(subformDataStr),  {"lp": MWF.xApplication.process.Xform.LP.form});
+            this.subformData = JSON.decode(jsonStr);
+            this.subformData.updateTime = data.updateTime;
+        }
+    }
+});
+
+
+MWF.xApplication.process.Xform.SubmitForm = MWF.APPSubmitform = new Class({
+    Extends: MWF.APPSubform,
+    _loadUserInterface: function () {
+        // this.node.empty();
+        this.getSubform(function () {
+            this.loadSubform();
+        }.bind(this));
+    },
+    reload: function () {
+        // this.node.empty();
+        this.getSubform(function () {
+            this.loadSubform();
+        }.bind(this));
+    },
+    show: function () {
+        if (this.json.submitScript &amp;&amp; this.json.submitScript.code) {
+            this.form.Macro.exec(this.json.submitScript.code, this);
+        }
+        // this.fireSubFormEvent("load");
+    },
+    // fireSubFormEvent : function( name ){
+    //     var events = this.subformData.json.events;
+    //     if( events &amp;&amp; events[name] &amp;&amp; events[name]["code"] ){
+    //         this.form.Macro.exec(events[name]["code"], this);
+    //     }
+    // },
+    loadSubform: function () {
+        if (this.subformData) {
+            if (!this.checkSubformUnique(this.subformData.json.id)) { //如果提交表单已经嵌入到表单中，那么把这个表单弹出来
+                // this.form.notice(MWF.xApplication.process.Xform.LP.subformUniqueError, "error");
+                this.isEmbedded = true;
+                this.fireEvent("afterModulesLoad");
+            } else if (!this.checkSubformNested(this.subformData.json.id)) {
+                this.form.notice(MWF.xApplication.process.Xform.LP.subformNestedError, "error");
+            } else {
+                //this.form.addEvent("postLoad", function(){
+
+                // this.fireSubFormEvent("queryLoad");
+                this.loadCss();
+
+                this.node.set("html", this.subformData.html);
+                Object.each(this.subformData.json.moduleList, function (module, key) {
+                    var formKey = key;
+                    if (this.form.json.moduleList[key]) {
+                        formKey = this.json.id + "_" + key;
+                        var moduleNode = this.node.getElement("#" + key);
+                        if (moduleNode) moduleNode.set("id", formKey);
+                        module.id = formKey;
+                    }
+                    this.form.json.moduleList[formKey] = module;
+                }.bind(this));
+
+                var moduleNodes = this.form._getModuleNodes(this.node);
+                moduleNodes.each(function (node) {
+                    if (node.get("MWFtype") !== "form") {
+                        var _self = this;
+                        var json = this.form._getDomjson(node);
+                        //if( json.type === "Subform" || json.moduleName === "subform" )this.form.subformCount++;
+                        var module = this.form._loadModule(json, node, function () {
+                            this.parentformIdList = _self.getParentformIdList();
+                        });
+                        this.form.modules.push(module);
+                    }
+                }.bind(this));
+
+                this.form.subformLoaded.push(this.subformData.json.id);
+                this.fireEvent("afterModulesLoad");
+                // this.fireSubFormEvent("postLoad");
+                // this.fireSubFormEvent("load");
+                // this.fireSubFormEvent("afterLoad");
+            }
+        }
+        // if( this.form.subformLoadedCount ){
+        //     this.form.subformLoadedCount++;
+        // }else{
+        //     this.form.subformLoadedCount = 1
+        // }
+        // this.form.checkSubformLoaded();
+    },
+    getSubform: function (callback) {
+        var method = (this.form.json.mode !== "Mobile" &amp;&amp; !layout.mobile) ? "getForm" : "getFormMobile";
+        if (this.json.submitFormType === "script") {
+            if (this.json.submitFormScript &amp;&amp; this.json.submitFormScript.code) {
+                var data = this.form.Macro.exec(this.json.submitFormScript.code, this);
+                if (data) {
+                    var formName, app;
+                    if (typeOf(data) === "string") {
+                        formName = data;
+                    } else {
+                        if (data.application) app = data.application;
+                        if (data.form) formName = data.form;
+                    }
+                    if (formName) {
+                        if (!app) app = (this.form.businessData.work || this.form.businessData.workCompleted).application;
+                        MWF.Actions.get("x_processplatform_assemble_surface")[method](formName, app, function (json) {
+                            this.getSubformData(json.data);
+                            if (callback) callback();
+                        }.bind(this));
+                    } else {
+                        if (callback) callback();
+                    }
+                } else {
+                    if (callback) callback();
+                }
+            }
+        } else {
+            if (this.json.submitFormSelected &amp;&amp; this.json.submitFormSelected !== "none") {
+                var app;
+                if (this.json.submitFormAppSelected) {
+                    app = this.json.submitFormAppSelected;
+                } else {
+                    app = (this.form.businessData.work || this.form.businessData.workCompleted).application;
+                }
+                MWF.Actions.get("x_processplatform_assemble_surface")[method](this.json.submitFormSelected, app, function (json) {
+                    this.getSubformData(json.data);
+                    if (callback) callback();
+                }.bind(this));
+            } else {
+                if (callback) callback();
+            }
+        }
+    }
+});
+</code></pre>
+    </article>
+</section>
+
+
+
+
+  </div>
+</main>
+
+
+      <div class="api-search-results layout-main" id="api-search-results">
+    <div class="container">
+        <div class="search-noresults"></div>
+        <div class="search-results">
+            <div class="has-results">
+                <h1 class="search-results-title">
+                    <span class='search-results-count'></span> results matching <span class='search-query'></span>
+                </h1>
+                <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+                <h1 class="search-results-title">
+                    No results matching '<span class='search-query'></span>'
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 05 2021 19:18:04 GMT+0800 (GMT+08:00)
+  </div>
+</footer>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/prism.dev.js"></script>
+<script src="scripts/init.js" defer></script>
+
+    <script src="scripts/jquery.mark.min.js"></script>
+    <script src="scripts/search.js" defer></script>
+
+
+</body>
+</html>

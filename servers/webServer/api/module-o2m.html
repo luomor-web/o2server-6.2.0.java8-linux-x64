@@ -1,0 +1,4453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>O2OA WebAPI: o2m | O2OA开发平台</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+        <link type="text/css" rel="stylesheet" href="styles/styles_search.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      O2OA前台API
+    </a>
+  </h1>
+  
+      <div class="search-input" id="api-search-input">
+        <input placeholder="输入关键字搜索">
+      </div>
+  
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><ul class='nav-content' id='module:data' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-data.html">data</a></span></li></ul><ul class='nav-content' id='module:workContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-workContext.html">workContext</a></span></li></ul><ul class='nav-content' id='module:documentContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-documentContext.html">documentContext</a></span></li></ul><ul class='nav-content' id='module:form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-form.html">form</a></span></li></ul><ul class='nav-content' id='module:page' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-page.html">page</a></span></li></ul><ul class='nav-content' id='module:queryView' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryView.html">queryView</a></span></li></ul><ul class='nav-content' id='module:view' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-view.html">view</a></span></li></ul><ul class='nav-content' id='module:queryStatement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryStatement.html">queryStatement</a></span></li></ul><ul class='nav-content' id='module:statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-statement.html">statement</a></span></li></ul><ul class='nav-content' id='module:importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-importer.html">importer</a></span></li></ul><ul class='nav-content' id='module:org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-org.html">org</a></span></li></ul><ul class='nav-content' id='module:session' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-session.html">session</a></span></li></ul><ul class='nav-content' id='module:Dict' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Dict.html">Dict</a></span></li></ul><ul class='nav-content' id='module:Actions' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Actions.html">Actions</a></span></li></ul><ul class='nav-content' id='module:include' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-include.html">include</a></span></li></ul><ul class='nav-content' id='module:define' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-define.html">define</a></span></li></ul><ul class='nav-content' id='module:o2m' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-o2m.html">o2m</a></span></li></ul><ul class='nav-content' id='module:wait' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-wait.html">wait</a></span></li></ul></ul></ul><ul><li class="nav-heading">Classes</li><li class='nav-category'>FormComponents</li><ul class='nav-category-content' style='margin-left: 10px; '><ul class='nav-content' id='MWF.xApplication.process.Xform.$Input' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Input.html">$Input</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.$Module' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Module.html">$Module</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Actionbar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Actionbar.html">Actionbar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Address' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Address.html">Address</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Attachment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Attachment.html">Attachment</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Button' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Button.html">Button</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Calendar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Calendar.html">Calendar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Checkbox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Checkbox.html">Checkbox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Combox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Combox.html">Combox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Common' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Common.html">Common</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridMobile.html">DatagridMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridPC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridPC.html">DatagridPC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatableMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatableMobile.html">DatatableMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatablePC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatablePC.html">DatatablePC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Datatemplate' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Datatemplate.html">Datatemplate</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Div' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Div.html">Div</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Documenteditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Documenteditor.html">Documenteditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Form.html">Form</a></span></li></ul><ul class='nav-content' id='PortalPage' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="PortalPage.html">PortalPage</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Htmleditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Htmleditor.html">Htmleditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Iframe' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Iframe.html">Iframe</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Image' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Image.html">Image</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ImageClipper' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ImageClipper.html">ImageClipper</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Importer.html">Importer</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Label' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Label.html">Label</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Log' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Log.html">Log</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Monitor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Monitor.html">Monitor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Number' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Number.html">Number</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Office' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Office.html">Office</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Opinion' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Opinion.html">Opinion</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Org.html">Org</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Radio' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Radio.html">Radio</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ReadLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ReadLog.html">ReadLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Select' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Select.html">Select</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Sidebar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Sidebar.html">Sidebar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Source' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Source.html">Source</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SourceText' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SourceText.html">SourceText</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Stat' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Stat.html">Stat</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Statement.html">Statement</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.StatementSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.StatementSelector.html">StatementSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SubSource' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SubSource.html">SubSource</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Subform' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Subform.html">Subform</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tab' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tab.html">Tab</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table.html">Table</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table$Td' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table$Td.html">Table$Td</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textarea' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textarea.html">Textarea</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textfield' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textfield.html">Textfield</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tree' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tree.html">Tree</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.View' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.View.html">View</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ViewSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ViewSelector.html">ViewSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Widget' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Widget.html">Widget</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Author' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Author.html">Author</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Comment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Comment.html">Comment</a></span></li></ul><ul class='nav-content' id='CMSForm' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSForm.html">CMSForm</a></span></li></ul><ul class='nav-content' id='CMSLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSLog.html">CMSLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Reader' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Reader.html">Reader</a></span></li></ul></ul></ul></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#ViewFilter">ViewFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementFilter">StatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementParameter">StatementParameter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#GroupFlag">GroupFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#PersonFlag">PersonFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#RoleFlag">RoleFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#IdentityFlag">IdentityFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#UnitFlag">UnitFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatagridData">DatagridData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatableData">DatatableData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatemplateData">DatatemplateData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#TreeData">TreeData</a></span></li>
+    <ul class='nav-sub-content' style='padding: 0px;margin: 0px;'><li class='nav-sub-category'>notification</li><ul class='nav-sub-category-content' style='padding: 0px 0px 0px 10px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.alert">alert</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.confirm">confirm</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.prompt">prompt</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.vibrate">vibrate</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.toast">toast</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.actionSheet">actionSheet</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.showLoading">showLoading</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.hideLoading">hideLoading</a></span></li></ul><li class='nav-sub-category'>util.date</li><ul class='nav-sub-category-content' style='padding: 0px 0px 0px 10px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.datePicker">datePicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.timePicker">timePicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.dateTimePicker">dateTimePicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.chooseOneDay">chooseOneDay</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.chooseDateTime">chooseDateTime</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.chooseInterval">chooseInterval</a></span></li></ul><li class='nav-sub-category'>util.device</li><ul class='nav-sub-category-content' style='padding: 0px 0px 0px 10px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.getPhoneInfo">getPhoneInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.scan">scan</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.location">location</a></span></li></ul><li class='nav-sub-category'>util.navigation</li><ul class='nav-sub-category-content' style='padding: 0px 0px 0px 10px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.setTitle">setTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.close">close</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.goBack">goBack</a></span></li></ul><li class='nav-sub-category'>biz</li><ul class='nav-sub-category-content' style='padding: 0px 0px 0px 10px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.workClose">workClose</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.departmentsPicker">departmentsPicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.IdentityPicker">IdentityPicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.GroupPicker">GroupPicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.PersonPicker">PersonPicker</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-o2m.html#.ComplexPicker">ComplexPicker</a></span></li></ul></ul>
+  </nav>
+</header>
+
+
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Module</p>
+    <h1 class="page-title">o2m</h1>
+    
+
+
+
+
+<section>
+
+
+<header class="not-class">
+
+
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+
+    
+        
+            <div class="description"><p><b>o2m</b> 是O2OA移动端APP提供的调用原生控件的能力，帮助开发者高效使用拍照、定位等手机系统的能力，同时可以直接使用扫一扫、打开原生应用、选择时间，人员，组织等业务的能力，带给门户接近原生代码的体验
+<br/>
+<b>o2m</b> 只有在O2OA移动端APP中才能提供能力</p></div>
+        
+
+        
+            <h4 class='method-heading'>Usable Range</h4>
+            <div class="usable-range">
+                
+                    <code class='range-item'>流程表单</code>
+                
+                    <code class='range-item'>门户</code>
+                
+            </div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">// 可以在移动端 流程表单、门户 上使用
+this.o2m</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.30">, line 30</a>
+        </li>
+    </ul>
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+     
+
+    
+
+    
+
+
+    
+
+    
+        <h3 class="subtitle">Methods</h3>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".alert">alert<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>原生Alert提示弹出窗</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>提示窗传入对象</p>
+<pre><code class='language-js'>{
+ "title": "提示",  //消息标题，可为空
+ "message": "这里是消息内容", //消息内容
+ "buttonName": "确定", //确定按钮名称
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/notification_alert.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.notification.alert({
+ message: "亲爱的",
+ title: "提示",//可传空
+ buttonName: "收到",
+ onSuccess : function() {//onSuccess将在点击button之后回调},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.114">, line 114</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".confirm">confirm<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>原生confirm提示弹出窗</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>提示窗传入对象</p>
+<pre><code class='language-js'>{
+ "title": "提示",  //消息标题，可为空
+ "message": "这里是消息内容", //消息内容
+ "buttonLabels": ["确定", "取消"], //按钮名称 Array[String]
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/notification_confirm.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.notification.confirm({
+ message: "你爱我吗",
+ title: "提示",//可传空
+ buttonLabels: ['爱', '不爱'],
+ onSuccess : function(buttonIndex) {
+   //onSuccess将在点击button之后回调
+   //buttonIndex: 0 被点击按钮的索引值，Number类型，从0开始
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.175">, line 175</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".prompt">prompt<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>原生prompt提示弹出窗</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>prompt需要传入对象</p>
+<pre><code class='language-js'>{
+ "title": "提示",  //消息标题，可为空
+ "message": "这里是消息内容", //消息内容
+ "buttonLabels": ['继续', '不玩了'], //按钮名称 Array[String]
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/notification_prompt.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.notification.prompt({
+ message: "再说一遍？",
+ title: "提示",//可传空
+ buttonLabels: ['继续', '不玩了'],
+ onSuccess : function(result) {
+    //result是一个字符串，格式是json格式，内容如下：
+    //{
+    //    buttonIndex: 0, //被点击按钮的索引值，Number类型，从0开始
+    //    value: '' //输入的值
+    //}
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.239">, line 239</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".vibrate">vibrate<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>手机震动</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>震动需要传入对象</p>
+<pre><code class='language-js'>{
+ "duration": 300,  //震动时间，android可配置 iOS忽略
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.notification.vibrate({
+ duration: 300, 
+ onSuccess : function() {
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.297">, line 297</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".toast">toast<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>toast提示</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>toast需要传入对象</p>
+<pre><code class='language-js'>{
+ "message": "这里是提示信息",
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.notification.toast({
+ message: "提示消息内容", 
+ onSuccess : function() {
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.346">, line 346</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".actionSheet">actionSheet<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>底部弹出菜单</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>actionSheet需要传入对象</p>
+<pre><code class='language-js'>{
+ "title": "谁是最棒哒？",//标题
+ "cancelButton": '取消', //取消按钮文本
+ "otherButtons": ["孙悟空","猪八戒","唐僧","沙和尚"], //其他选项按钮名称
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/notification_action_sheet.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.notification.actionSheet({
+ title: "谁是最棒哒？", //标题
+ cancelButton: '取消', //取消按钮文本
+ otherButtons: ["孙悟空","猪八戒","唐僧","沙和尚"],
+ onSuccess : function(buttonIndex) {
+ //buttonIndex: 0 被点击按钮的索引值，Number，从0开始, 取消按钮为-1
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.400">, line 400</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".showLoading">showLoading<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>显示Loading浮层，请和hideLoading配合使用</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>showLoading需要传入对象</p>
+<pre><code class='language-js'>{
+ text: "使劲加载中..", //loading显示的字符，空表示不显示文字
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/notification_showLoading.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.notification.showLoading({
+ text: "使劲加载中..", //loading显示的字符，空表示不显示文字
+ onSuccess : function() {
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.451">, line 451</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".hideLoading">hideLoading<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>隐藏Loading浮层</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>hideLoading需要传入对象</p>
+<pre><code class='language-js'>{
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.notification.hideLoading({
+ onSuccess : function() {
+},
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.495">, line 495</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".datePicker">datePicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>日期选择器</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>datePicker需要传入对象</p>
+<pre><code class='language-js'>{
+ value: '2019-04-17', //默认显示日期
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/util_date_picker.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.util.date.datePicker({
+value: '2019-04-17', //默认显示日期
+onSuccess : function(result) {
+    //onSuccess将在点击完成之后回调
+    {
+        value: "2019-02-10"
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.587">, line 587</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".timePicker">timePicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>时间选择器</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>timePicker需要传入对象</p>
+<pre><code class='language-js'>{
+ value: '14:00', //默认显示时间
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/util_time_picker.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.util.date.timePicker({
+value: '14:00', //默认显示时间
+onSuccess : function(result) {
+    //onSuccess将在点击完成之后回调
+    {
+        value: "18:10"
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.636">, line 636</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".dateTimePicker">dateTimePicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>日期时间选择器</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>dateTimePicker需要传入对象</p>
+<pre><code class='language-js'>{
+ value: '2019-05-05 14:00', //默认显示时间
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/util_date_time_picker.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.util.date.dateTimePicker({
+value: '2019-05-05 14:00', //默认显示时间
+onSuccess : function(result) {
+    //onSuccess将在点击完成之后回调
+    {
+        value: "2019-03-18 18:10"
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.687">, line 687</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".chooseOneDay">chooseOneDay<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>月历日期选择器</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>chooseOneDay需要传入对象</p>
+<pre><code class='language-js'>{
+ value: '2019-05-05', //默认显示日期
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/util_choose_one_day.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.util.date.chooseOneDay({
+value: '2019-05-05', //默认显示日期
+onSuccess : function(result) {
+    //onSuccess将在点击完成之后回调
+    {
+        value: "2019-03-18"
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.738">, line 738</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".chooseDateTime">chooseDateTime<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>月历日期时间选择器</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>chooseDateTime需要传入对象</p>
+<pre><code class='language-js'>{
+ value: '2019-05-05 11:00', //默认显示时间
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/util_choose_date_time.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.util.date.chooseDateTime({
+value: '2019-05-05 11:00', //默认显示时间
+onSuccess : function(result) {
+    //onSuccess将在点击完成之后回调
+    {
+        value: "2019-03-18 18:45"
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.788">, line 788</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".chooseInterval">chooseInterval<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>月历日期区间选择器</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>chooseInterval需要传入对象</p>
+<pre><code class='language-js'>{
+ startDate: '2019-05-05',
+ endDate: '2019-05-06',
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/util_choose_interval.jpeg">
+</p>
+    
+    <pre><code class="language-js">o2m.util.date.chooseInterval({
+value: '2019-05-05 11:00', //默认显示时间
+onSuccess : function(result) {
+    //onSuccess将在点击完成之后回调
+    {
+        startDate: "2019-05-05", 
+            endDate: "2019-05-06",
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.840">, line 840</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".getPhoneInfo">getPhoneInfo<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>获取手机基础信息</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>getPhoneInfo需要传入对象</p>
+<pre><code class='language-js'>{
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.util.device.getPhoneInfo({
+onSuccess : function(result) {
+    {
+     screenWidth: 1080, // 手机屏幕宽度
+     screenHeight: 1920, // 手机屏幕高度
+     brand:'Mi'， // 手机品牌
+     model:'Note4', // 手机型号
+     version:'7.0'. // 版本
+     netInfo:'wifi' , // 网络类型 wifi／4g／3g 
+     operatorType :'xx' // 运营商信息
+    }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.891">, line 891</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".scan">scan<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>扫二维码</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>scan需要传入对象</p>
+<pre><code class='language-js'>{
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.util.device.scan({
+onSuccess : function(result) {
+    { 'text': '扫码内容'}
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.939">, line 939</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".location">location<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>单次定位</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>location需要传入对象</p>
+<pre><code class='language-js'>{
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.util.device.location({
+onSuccess : function(result) {
+    //这里返回百度坐标系的定位信息 
+    { 
+     'latitude': 39.903578, // 纬度
+     'longitude': 116.473565, // 经度
+     'address': '地址描述'
+     }
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.979">, line 979</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".setTitle">setTitle<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>设置原生页面标题</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>setTitle需要传入对象</p>
+<pre><code class='language-js'>{
+ title : '导航标题',    
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.util.navigation.setTitle({
+title : '导航标题', 
+onSuccess : function() {
+ },
+ onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1025">, line 1025</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".close">close<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>关闭当前原生页面</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.util.navigation.close();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1065">, line 1065</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".goBack">goBack<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>返回上级原生页面</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.util.navigation.goBack();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1094">, line 1094</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".workClose">workClose<span class="signature">()</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>关闭当前工作页面，<b>只能在工作表单中可以使用</b></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+    <pre><code class="language-js">o2m.biz.workClose();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1149">, line 1149</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".departmentsPicker">departmentsPicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>通讯录选部门</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>departmentsPicker需要传入对象</p>
+<pre><code class='language-js'>{
+ topList: [],//Array[String] 可选的顶级组织列表，不传或列表为空的时候，显示全部组织
+ orgType: "",//String 可选择的组织类别。为空就是全部组织类型都可以
+ multiple:true, //是否多选
+ maxNumber: 0, //Int 当multiple为true的时候，最多可选择的部门数
+ pickedDepartments:[],//Array[String] 已经选择的部门distinguishedName列表
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/biz_dept_choose.png">
+</p>
+    
+    <pre><code class="language-js">o2m.biz.contact.departmentsPicker({
+topList: [],//不传或者空列表，显示全部组织
+orgType: "",//可传空 只显示某种类型的组织
+multiple:true, //是否多选
+maxNumber: 0, //最大选择数量
+pickedDepartments:[],//已选部门
+onSuccess : function(result) {
+    //返回结果样例
+    {
+      departments:[{
+      "id":"xxxx",
+      "name":"部门名称", 
+      "unique":"xxxx",
+      "distinguishedName":"部门@xxxx@U",
+      "typeList":["xxxx"],
+      "shortName":"xxxx",
+      "level": 0,
+      "levelName":"xxxx",
+      }]
+    }
+  
+},
+onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1188">, line 1188</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".IdentityPicker">IdentityPicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>通讯录选身份</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>IdentityPicker需要传入对象</p>
+<pre><code class='language-js'>{
+ topList: [],//Array[String] 可选的顶级组织列表，不传或列表为空的时候，显示全部组织
+ multiple:true, //Boolean 是否多选
+ maxNumber: 0, //Int 当multiple为true的时候，最多可选择的身份数
+ pickedIdentities:[],//Array[String] 已经选择的身份distinguishedName列表
+ duty: [],//Array[String] 可选择的人员职责
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/biz_identity_choose.png">
+</p>
+    
+    <pre><code class="language-js">o2m.biz.contact.IdentityPicker({
+topList: [],//不传或者空列表，显示全部组织
+multiple:true, //是否多选
+maxNumber: 0, //最大选择数量
+pickedIdentities:[],//已选身份列表
+duty: [],//人员职责
+onSuccess : function(result) {
+    //返回结果样例
+    {
+      identities:[{
+        "id":"xxxx",
+        "name":"姓名", 
+        "distinguishedName":"姓名@xxxx@I",
+        "person":"xxx", 
+        "unique":"xxxx",
+        "unit":"xxx",
+        "unitName":"xxxx",
+        "unitLevel": 0,
+        "unitLevelName":"xxxx",
+        "personName":"xxxx",
+        "personUnique":"xxx",
+        "personDn":"xxx"
+        }]
+    }
+  
+},
+onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1264">, line 1264</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".GroupPicker">GroupPicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>群组选择</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>GroupPicker需要传入对象</p>
+<pre><code class='language-js'>{
+ multiple:true, //Boolean 是否多选
+ maxNumber: 0, //Int 当multiple为true的时候，最多可选择的身份数
+ pickedGroups:[],//Array[String] 已经选择的群组distinguishedName列表
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/biz_group_choose.png">
+</p>
+    
+    <pre><code class="language-js">o2m.biz.contact.GroupPicker({
+multiple:true, //是否多选
+maxNumber: 0, //最大选择数量
+pickedGroups:[],//已选群组列表
+onSuccess : function(result) {
+    //返回结果样例
+    {
+       groups:[{
+          "id":"xxxx", 
+          "name":"群组名称", 
+          "distinguishedName":"群组名称@xxxx@G"
+          "unique":"xxxx", 
+          }]
+    }
+  
+},
+onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1341">, line 1341</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".PersonPicker">PersonPicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>人员选择</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>PersonPicker需要传入对象</p>
+<pre><code class='language-js'>{
+ multiple:true, //Boolean 是否多选
+ maxNumber: 0, //Int 当multiple为true的时候，最多可选择的身份数
+ pickedUsers:[],//Array[String] 已经选择的人员distinguishedName列表
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/biz_person_choose.png">
+</p>
+    
+    <pre><code class="language-js">o2m.biz.contact.PersonPicker({
+multiple:true, //是否多选
+maxNumber: 0, //最大选择数量
+pickedUsers:[],//已选人员列表
+onSuccess : function(result) {
+    //返回结果样例
+    {
+        users:[{
+          "id":"xxx", 
+          "name":"姓名", 
+          "unique":"xxx", 
+          "distinguishedName":"姓名@xxxx@P"
+          "genderType":"xxx", 
+          "employee":"xxx", 
+          "mail":"xxx", 
+          "weixin":"xxx", 
+          "qq":"xxx", 
+          "mobile":"xxx", 
+          "officePhone":"xxx"
+          }]
+    }
+  
+},
+onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1405">, line 1405</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".ComplexPicker">ComplexPicker<span class="signature">(obj)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>复合选择器，可配置选择多种数据</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">obj</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>ComplexPicker需要传入对象</p>
+<pre><code class='language-js'>{
+ pickMode: ["departmentPicker", "identityPicker"], //Array[String] 选择器类型，可传入值：departmentPicker、identityPicker、groupPicker、personPicker
+ topList：Array[String] 可选的顶级组织列表，不传或列表为空的时候，显示全部组织
+ duty: Array[String] 可选择的人员职责
+ orgType：String 可选择的组织类别。为空就是全部组织类型都可以
+ multiple:true, //Boolean 是否多选
+ maxNumber: 0, //Int 当multiple为true的时候，最多可选择的身份数
+ pickedDepartments：Array[String] 已经选择的部门distinguishedName列表
+ pickedIdentities：Array[String] 已经选择的身份distinguishedName列表
+ pickedGroups： Array[String] 已经选择的群组distinguishedName列表
+ pickedUsers:[],//Array[String] 已经选择的人员distinguishedName列表
+ "onSuccess": function,  //成功回调
+ "onFail": function, //失败回调
+}</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Example</h4>
+    
+        <p class="code-caption">
+样例效果：<br/>
+<img src="img/module/o2m/biz_complex_choose.png">
+</p>
+    
+    <pre><code class="language-js">o2m.biz.contact.ComplexPicker({
+pickMode: ["departmentPicker", "identityPicker"], //选择器类型
+topList: [],//不传或者空列表，显示全部组织
+orgType: "",//可传空 只显示某种类型的组织
+duty: [],//人员职责
+multiple:true, //是否多选
+maxNumber: 0, //最大选择数量
+pickedDepartments:[],//已选部门
+pickedIdentities:[],//已选身份列表
+pickedGroups:[],//已选群组列表
+pickedUsers:[],//已选人员列表
+onSuccess : function(result) {
+    //返回结果样例
+    {
+      departments:[{
+      "id":"xxxx",
+      "name":"部门名称", 
+      "unique":"xxxx",
+      "distinguishedName":"部门@xxxx@U",
+      "typeList":["xxxx"],
+      "shortName":"xxxx",
+      "level": 0,
+      "levelName":"xxxx",
+      }],
+      identities:[{
+      "id":"xxxx",
+      "name":"姓名", 
+      "distinguishedName":"姓名@xxxx@I",
+      "person":"xxx", 
+      "unique":"xxxx",
+      "unit":"xxx",
+      "unitName":"xxxx",
+      "unitLevel": 0,
+      "unitLevelName":"xxxx",
+      "personName":"xxxx",
+      "personUnique":"xxx",
+      "personDn":"xxx"
+      }],
+      groups:[{
+      "id":"xxxx", 
+      "name":"群组名称", 
+      "distinguishedName":"群组名称@xxxx@G"
+      "unique":"xxxx", 
+      }],
+      users:[{
+      "id":"xxx", 
+      "name":"姓名", 
+      "unique":"xxx", 
+      "distinguishedName":"姓名@xxxx@P"
+      "genderType":"xxx", 
+      "employee":"xxx", 
+      "mail":"xxx", 
+      "weixin":"xxx", 
+      "qq":"xxx", 
+      "mobile":"xxx", 
+      "officePhone":"xxx"
+      }]
+    }
+},
+onFail : function(err) {}
+});</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="x_desktop_js_o2m.api.js.html">x_desktop/js/o2m.api.js</a><a href="x_desktop_js_o2m.api.js.html#source.1490">, line 1490</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+  </div>
+</main>
+
+
+      <div class="api-search-results layout-main" id="api-search-results">
+    <div class="container">
+        <div class="search-noresults"></div>
+        <div class="search-results">
+            <div class="has-results">
+                <h1 class="search-results-title">
+                    <span class='search-results-count'></span> results matching <span class='search-query'></span>
+                </h1>
+                <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+                <h1 class="search-results-title">
+                    No results matching '<span class='search-query'></span>'
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 05 2021 19:18:04 GMT+0800 (GMT+08:00)
+  </div>
+</footer>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/prism.dev.js"></script>
+<script src="scripts/init.js" defer></script>
+
+    <script src="scripts/jquery.mark.min.js"></script>
+    <script src="scripts/search.js" defer></script>
+
+
+</body>
+</html>

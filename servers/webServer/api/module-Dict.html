@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>O2OA WebAPI: Dict | O2OA开发平台</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+        <link type="text/css" rel="stylesheet" href="styles/styles_search.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      O2OA前台API
+    </a>
+  </h1>
+  
+      <div class="search-input" id="api-search-input">
+        <input placeholder="输入关键字搜索">
+      </div>
+  
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><ul class='nav-content' id='module:data' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-data.html">data</a></span></li></ul><ul class='nav-content' id='module:workContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-workContext.html">workContext</a></span></li></ul><ul class='nav-content' id='module:documentContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-documentContext.html">documentContext</a></span></li></ul><ul class='nav-content' id='module:form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-form.html">form</a></span></li></ul><ul class='nav-content' id='module:page' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-page.html">page</a></span></li></ul><ul class='nav-content' id='module:queryView' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryView.html">queryView</a></span></li></ul><ul class='nav-content' id='module:view' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-view.html">view</a></span></li></ul><ul class='nav-content' id='module:queryStatement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryStatement.html">queryStatement</a></span></li></ul><ul class='nav-content' id='module:statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-statement.html">statement</a></span></li></ul><ul class='nav-content' id='module:importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-importer.html">importer</a></span></li></ul><ul class='nav-content' id='module:org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-org.html">org</a></span></li></ul><ul class='nav-content' id='module:session' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-session.html">session</a></span></li></ul><ul class='nav-content' id='module:Dict' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Dict.html">Dict</a></span></li></ul><ul class='nav-content' id='module:Actions' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Actions.html">Actions</a></span></li></ul><ul class='nav-content' id='module:include' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-include.html">include</a></span></li></ul><ul class='nav-content' id='module:define' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-define.html">define</a></span></li></ul><ul class='nav-content' id='module:o2m' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-o2m.html">o2m</a></span></li></ul><ul class='nav-content' id='module:wait' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-wait.html">wait</a></span></li></ul></ul></ul><ul><li class="nav-heading">Classes</li><li class='nav-category'>FormComponents</li><ul class='nav-category-content' style='margin-left: 10px; '><ul class='nav-content' id='MWF.xApplication.process.Xform.$Input' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Input.html">$Input</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.$Module' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Module.html">$Module</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Actionbar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Actionbar.html">Actionbar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Address' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Address.html">Address</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Attachment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Attachment.html">Attachment</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Button' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Button.html">Button</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Calendar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Calendar.html">Calendar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Checkbox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Checkbox.html">Checkbox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Combox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Combox.html">Combox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Common' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Common.html">Common</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridMobile.html">DatagridMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridPC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridPC.html">DatagridPC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatableMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatableMobile.html">DatatableMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatablePC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatablePC.html">DatatablePC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Datatemplate' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Datatemplate.html">Datatemplate</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Div' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Div.html">Div</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Documenteditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Documenteditor.html">Documenteditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Form.html">Form</a></span></li></ul><ul class='nav-content' id='PortalPage' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="PortalPage.html">PortalPage</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Htmleditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Htmleditor.html">Htmleditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Iframe' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Iframe.html">Iframe</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Image' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Image.html">Image</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ImageClipper' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ImageClipper.html">ImageClipper</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Importer.html">Importer</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Label' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Label.html">Label</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Log' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Log.html">Log</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Monitor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Monitor.html">Monitor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Number' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Number.html">Number</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Office' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Office.html">Office</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Opinion' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Opinion.html">Opinion</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Org.html">Org</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Radio' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Radio.html">Radio</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ReadLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ReadLog.html">ReadLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Select' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Select.html">Select</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Sidebar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Sidebar.html">Sidebar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Source' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Source.html">Source</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SourceText' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SourceText.html">SourceText</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Stat' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Stat.html">Stat</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Statement.html">Statement</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.StatementSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.StatementSelector.html">StatementSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SubSource' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SubSource.html">SubSource</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Subform' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Subform.html">Subform</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tab' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tab.html">Tab</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table.html">Table</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table$Td' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table$Td.html">Table$Td</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textarea' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textarea.html">Textarea</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textfield' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textfield.html">Textfield</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tree' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tree.html">Tree</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.View' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.View.html">View</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ViewSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ViewSelector.html">ViewSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Widget' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Widget.html">Widget</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Author' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Author.html">Author</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Comment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Comment.html">Comment</a></span></li></ul><ul class='nav-content' id='CMSForm' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSForm.html">CMSForm</a></span></li></ul><ul class='nav-content' id='CMSLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSLog.html">CMSLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Reader' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Reader.html">Reader</a></span></li></ul></ul></ul></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#ViewFilter">ViewFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementFilter">StatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementParameter">StatementParameter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#GroupFlag">GroupFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#PersonFlag">PersonFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#RoleFlag">RoleFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#IdentityFlag">IdentityFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#UnitFlag">UnitFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatagridData">DatagridData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatableData">DatatableData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatemplateData">DatatemplateData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#TreeData">TreeData</a></span></li>
+    <ul class='nav-sub-content' style='padding: 0px;margin: 0px;'><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-Dict.html#.get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-Dict.html#add">add</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-Dict.html#set">set</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function" ><a href="module-Dict.html#delete">delete</a></span></li></ul>
+  </nav>
+</header>
+
+
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Module</p>
+    <h1 class="page-title">Dict</h1>
+    
+
+
+
+
+<section>
+
+
+<header class="not-class">
+
+
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+
+    
+        
+            <div class="description"><p>this.Dict是一个工具类，如果您在流程、门户中创建了数据字典，可以使用this.Dict类对数据字典进行增删改查操作。</p></div>
+        
+
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">//您可以在页面、表单、流程各个嵌入脚本中，通过this.Dict()对本应用或其他应用的数据字典中的数据进行增删改查，如下：
+var dict = new this.Dict( options )</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">optionsOrName</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <span class="param-description"><p>数据字典标识字符串或者是对象。</p>
+<div>如果对本应用的数据字典操作，将optionsOrName设置为string。</div>
+<pre><code class='language-js'>var dict = new this.Dict("bulletinDictionary"); //数据字典的名称、别名或id
+</code></pre>
+<div>如果需要对其他应用的数据字典进行操作，将options设置为JsonObject</div>
+<pre><code class='language-js'>var dict = new this.Dict({
+    //type: 应用类型。可以为process  cms。
+    //如果没有该选项或者值为空字符串，则表示应用脚本和被应用的脚本配置类型相同。
+    //比如在流程的A应用脚本中引用流程B应用的脚本配置，则type可以省略。
+   type : "cms",
+   application : "bulletin", //流程、CMS的名称、别名、id, 默认为当前应用
+   name : "bulletinDictionary", // 数据字典的名称、别名、id
+   enableAnonymous : true //允许用户在未登录的情况下读取cms的数据字典, type为process的时候此参数无效，默认为false
+});
+</code></pre></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Object</code>
+            
+            
+                <p>Dict对象</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.222">, line 222</a>
+        </li>
+    </ul>
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+     
+
+    
+
+    
+
+
+    
+
+    
+        <h3 class="subtitle">Methods</h3>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    <span class="method-type-signature is-static">static</span>
+    </div>
+
+    
+    <h4 class="method-name" id=".get">get<span class="signature">(path<span class="signature-attributes">opt</span>, success<span class="signature-attributes">opt</span>, failure<span class="signature-attributes">opt</span>, async<span class="signature-attributes">opt</span>, refresh<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"> &rarr; {Promise|Object|Array|String|Number|Boolean}</span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>根据路径获取数据字典中的数据。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">var data = dict.get( path, success, failure, async, refresh )</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">path</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>数据字典中的数据路径，允许使用中文。当路径为多级时，用点号(.)分隔。当值为空的时候，表示获取数据字典中的所有数据。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">success</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>获取数据成功时的回调函数。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">failure</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>获取数据失败时的回调。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">async</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Boolean</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>是否异步执行，默认为false。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">refresh</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Boolean</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>是否忽略本地缓存直接从服务器获取，默认为false。</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise</code>
+            
+                <code>Object</code>
+            
+                <code>Array</code>
+            
+                <code>String</code>
+            
+                <code>Number</code>
+            
+                <code>Boolean</code>
+            
+            
+                <p>当async为true时返回Promise(<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise说明</a>)；
+否则返回数据字典的数据，类型和配置数据字典时候指定的一致。</p>
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+//没有参数的时候，表示同步获取获取所有数据
+ var data = dict.get()
+
+ //同步执行，获取category下key为subCategory的数据
+ var data = dict.get("category.subCategory");
+
+//异步执行，使用回调处理数据，如果category为数组，获取第0项数据
+dict.get("category.0", function(data){
+     //data 是数据字典的数据
+ }, function(xhr){
+     //xhr 为 xmlHttpRequest
+ }, true //异步执行
+)
+
+//异步执行，使用Promise处理结果
+var promise = dict.get("category", null, null, true);
+promise.then( function(data){
+    //data 是数据字典的数据
+})</code></pre>
+
+        <p class="code-caption">
+    已经配置好了如下图所示的数据字典
+<img src='img/module/Dict/dict.png' />
+</p>
+    
+    <pre><code class="language-js">var dict = new this.Dict({
+    //type: 应用类型。可以为process  cms。
+    //如果没有该选项或者值为空字符串，则表示应用脚本和被应用的脚本配置类型相同。
+    //比如在流程的A应用脚本中引用流程B应用的脚本配置，则type可以省略。
+   type : "cms",
+   application : "bulletin", //流程、CMS的名称、别名、id, 默认为当前应用
+   name : "bulletinDictionary", // 数据字典的名称、别名、id
+   enableAnonymous : true //允许用户在未登录的情况下读取cms的数据字典, type为process的时候此参数无效，默认为false
+});
+
+var data = dict.get();
+//data的值为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+           "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 2.0,
+           "text": "部门公告",
+           "value": "department"
+       }
+   ]
+}
+
+ var category = dict.get("category");
+ //category的值为
+ [
+    {
+       "enable": true,
+       "sequence": 1.0,
+       "text": "公司公告",
+       "value": "company"
+   },
+    {
+      "enable": "false",
+      "sequence": 2.0,
+       "text": "部门公告",
+       "value": "department"
+   }
+ ]
+
+ var array0 = dict.get("category.0");
+ //array0 的值为
+ {
+   "enable": true,
+   "sequence": 1.0,
+   "text": "公司公告",
+   "value": "company"
+}
+
+var enable = dict.get("category.0.eanble");
+//enable 的值为 true</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.247">, line 247</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="add">add<span class="signature">(path, data, success<span class="signature-attributes">opt</span>, failure<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>根据路径新增数据字典的数据。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">dict.add( path, data, success, failure )</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">path</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>数据字典中的数据路径，允许使用中文。当路径为多级时，用点号(.)分隔。如果path在数据字典中已有数据，且原有数据是数组，则数组添加一项；如果原有数据不是数组，则报错。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">data</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Number</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Boolean</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>需要新增的数据</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">success</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>增加数据成功时的回调函数。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">failure</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>增加数据错误时的回调函数。</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+dict.add( "category", { text : "系统公告", value : "system" }, function(data){
+   //data 形如
+   //{
+   //    "id": "80ed5f60-500f-4358-8bbc-b7e81f77aa39" //id为数据字典ID
+   //}
+}, function(xhr){
+   //xhr 为 xmlHttpRequest
+});</code></pre>
+
+        <p class="code-caption">
+    对get方法样例的数据字典进行赋值，如下：
+</p>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+dict.add( "category", { text : "系统公告", value : "system" }, function(data){
+   //data 形如
+   //{
+   //    "id": "80ed5f60-500f-4358-8bbc-b7e81f77aa39" //id为数据字典ID
+   //}
+}, function(xhr, text, error){
+   //xhr 为 xmlHttpRequest, text 为错误文本， error为Error对象
+});
+    //数据字典的值变为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+           "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 2.0,
+           "text": "部门公告",
+           "value": "department"
+       },
+       {
+           "text": "系统公告",
+           "value": "system"
+       }
+   ]
+}
+
+ dict.add( "category.2.sequence", 3 );
+    //数据字典的值变为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+           "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 2.0,
+           "text": "部门公告",
+           "value": "department"
+       },
+       {
+           "sequence" : 3.0,
+           "text": "系统公告",
+           "value": "system"
+       }
+   ]
+}
+dict.add( "archiveOptions", {
+   "yes" : "是",
+   "no" : "否"
+});
+    //数据字典的值变为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+           "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 2.0,
+           "text": "部门公告",
+           "value": "department"
+       },
+       {
+           "sequence" : 3.0,
+           "text": "系统公告",
+           "value": "system"
+       }
+
+   ],
+   "archiveOptions" : {
+       "yes" : "是",
+       "no" : "否"
+   }
+}</code></pre>
+
+        <p class="code-caption">下面是错误的赋值，如下：</p>
+    
+    <pre><code class="language-js">dict.add( "category.3", { text : "系统公告", value : "system" }); //出错，因为不能对数组下标直接赋值
+
+dict.add( "category.1.value", { text : "系统公告" } ); //出错，因为不能对已经存在的非数组路径赋值</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.348">, line 348</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="set">set<span class="signature">(path, data, success<span class="signature-attributes">opt</span>, failure<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>根据路径修改数据字典的数据。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">dict.set( path, data, success, failure )</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">path</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>数据字典中的数据路径，允许使用中文。当路径为多级时，用点号(.)分隔。如果数据路径不存在，则报错。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">data</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Number</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Boolean</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>修改后的数据</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">success</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>设置数据成功时的回调函数。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">failure</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>设置数据错误时的回调函数。</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+dict.set( "category", { text : "系统公告", value : "system" }, function(data){
+   //data 形如
+   //{
+   //    "id": "80ed5f60-500f-4358-8bbc-b7e81f77aa39" //id为数据字典ID
+   //}
+}, function(xhr){
+   //xhr 为 xmlHttpRequest
+});</code></pre>
+
+        <p class="code-caption">
+    对Example add的数据字典进行赋值，如下：
+</p>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+dict.set( "archiveOptions", [ { text : "是" }, { text : "否" } ]);
+     //数据字典的值变为
+ {
+    "category": [
+        {
+            "enable": true,
+            "sequence": 1.0,
+            "text": "公司公告",
+            "value": "company"
+        },
+        {
+            "enable": "false",
+            "sequence": 2.0,
+            "text": "部门公告",
+            "value": "department"
+        },
+        {
+            "sequence" : 3.0,
+            "text": "系统公告",
+            "value": "system"
+        }
+
+    ],
+    "archiveOptions" : [ { text : "是" }, { text : "否" } ]
+}
+
+dict.set( "category.2", { text : "县级公告", value : "county" }, function(data){
+    //data 形如
+    //{
+    //    "id": "80ed5f60-500f-4358-8bbc-b7e81f77aa39" //id为数据字典ID
+    //}
+ }, function(xhr){
+    //xhr 为 xmlHttpRequest
+ });
+
+  /数据字典的值变为
+ {
+    "category": [
+        {
+            "enable": true,
+            "sequence": 1.0,
+            "text": "公司公告",
+            "value": "company"
+        },
+        {
+            "enable": "false",
+            "sequence": 2.0,
+            "text": "部门公告",
+            "value": "department"
+        },
+        {
+            "text": "县级公告",
+            "value": "county"
+        }
+    ],
+    "archiveOptions" : [ { text : "是" }, { text : "否" } ]
+}
+
+dict.set( "category.1.sequence", 3 );
+dict.set( "category.2.sequence", 2 );
+     //数据字典的值变为
+     {
+    "category": [
+        {
+            "enable": true,
+            "sequence": 1.0,
+            "text": "公司公告",
+            "value": "company"
+        },
+        {
+            "enable": "false",
+            "sequence": 3.0,
+            "text": "部门公告",
+            "value": "department"
+        },
+        {
+            "sequence": 2.0,
+            "text": "县级公告",
+            "value": "county"
+        }
+    ],
+    "archiveOptions" : [ { text : "是" }, { text : "否" } ]
+}</code></pre>
+
+        <p class="code-caption">
+    下面是错误的赋值：
+</p>
+    
+    <pre><code class="language-js">dict.set( "category_1", { text : "公司公告" } ); //出错，因为category_1在数据字典中不存在</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.468">, line 468</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    
+    <h4 class="method-name" id="delete">delete<span class="signature">(path, success<span class="signature-attributes">opt</span>, failure<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+    
+
+
+
+
+
+<div class="method-description">
+    
+    <p>根据路径删除数据字典的数据。</p>
+</div>
+
+
+
+    <h4 class="method-heading">Syntax</h4>
+    
+    <pre><code class="language-js">dict.delete( path, success, failure )</code></pre>
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">path</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>String</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>数据字典中的数据路径，允许使用中文。当路径为多级时，用点号(.)分隔。如果数据路径不存在，则报错。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">success</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>删除数据成功时的回调函数。</p></span>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">failure</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>function</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <span class="param-description"><p>删除数据错误时的回调函数。</p></span>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Examples</h4>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+dict.delete( "category", function(){
+}, function(xhr){
+   //xhr 为 xmlHttpRequest
+});</code></pre>
+
+        <p class="code-caption">
+    对Example set的数据字典进行赋值，如下：
+</p>
+    
+    <pre><code class="language-js">var dict = new this.Dict("bulletinDictionary");
+
+dict.delete( "archiveOptions");
+//数据字典的值变为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+    *            "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 3.0,
+           "text": "部门公告",
+           "value": "department"
+       },
+       {
+           "sequence": 2.0,
+           "text": "县级公告",
+           "value": "county"
+       }
+   ]
+}
+
+dict.delete( "category.2.sequence", function(data){
+   //data 形如
+   //{
+   //    "id": "80ed5f60-500f-4358-8bbc-b7e81f77aa39" //id为数据字典ID
+   //}
+}, function(xhr){
+   //xhr 为 xmlHttpRequest
+});
+//数据字典的值变为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+           "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 3.0,
+           "text": "部门公告",
+           "value": "department"
+       },
+       {
+           "text": "县级公告",
+           "value": "county"
+       }
+   ]
+}
+
+dict.delete( "category.2");
+//数据字典的值变为
+{
+   "category": [
+       {
+           "enable": true,
+           "sequence": 1.0,
+           "text": "公司公告",
+           "value": "company"
+       },
+       {
+           "enable": "false",
+           "sequence": 3.0,
+           "text": "部门公告",
+           "value": "department"
+       }
+   ]
+}</code></pre>
+
+        <p class="code-caption">
+    下面是错误的删除：
+</p>
+    
+    <pre><code class="language-js">dict.delete( "category_1" ); //出错，因为category_1在数据字典中不存在</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="o2_core_o2_xScript_ViewEnvironment.js.html">o2_core/o2/xScript/ViewEnvironment.js</a><a href="o2_core_o2_xScript_ViewEnvironment.js.html#source.586">, line 586</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+  </div>
+</main>
+
+
+      <div class="api-search-results layout-main" id="api-search-results">
+    <div class="container">
+        <div class="search-noresults"></div>
+        <div class="search-results">
+            <div class="has-results">
+                <h1 class="search-results-title">
+                    <span class='search-results-count'></span> results matching <span class='search-query'></span>
+                </h1>
+                <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+                <h1 class="search-results-title">
+                    No results matching '<span class='search-query'></span>'
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 05 2021 19:18:04 GMT+0800 (GMT+08:00)
+  </div>
+</footer>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/prism.dev.js"></script>
+<script src="scripts/init.js" defer></script>
+
+    <script src="scripts/jquery.mark.min.js"></script>
+    <script src="scripts/search.js" defer></script>
+
+
+</body>
+</html>

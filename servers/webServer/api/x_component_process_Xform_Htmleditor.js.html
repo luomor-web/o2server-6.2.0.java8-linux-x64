@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>O2OA WebAPI: x_component_process_Xform/Htmleditor.js | O2OA开发平台</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-custom.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+    
+        <link type="text/css" rel="stylesheet" href="styles/styles_search.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      O2OA前台API
+    </a>
+  </h1>
+  
+      <div class="search-input" id="api-search-input">
+        <input placeholder="输入关键字搜索">
+      </div>
+  
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Modules</li><ul class='nav-content' id='module:data' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-data.html">data</a></span></li></ul><ul class='nav-content' id='module:workContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-workContext.html">workContext</a></span></li></ul><ul class='nav-content' id='module:documentContext' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-documentContext.html">documentContext</a></span></li></ul><ul class='nav-content' id='module:form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-form.html">form</a></span></li></ul><ul class='nav-content' id='module:page' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-page.html">page</a></span></li></ul><ul class='nav-content' id='module:queryView' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryView.html">queryView</a></span></li></ul><ul class='nav-content' id='module:view' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-view.html">view</a></span></li></ul><ul class='nav-content' id='module:queryStatement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-queryStatement.html">queryStatement</a></span></li></ul><ul class='nav-content' id='module:statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-statement.html">statement</a></span></li></ul><ul class='nav-content' id='module:importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-importer.html">importer</a></span></li></ul><ul class='nav-content' id='module:org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-org.html">org</a></span></li></ul><ul class='nav-content' id='module:session' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-session.html">session</a></span></li></ul><ul class='nav-content' id='module:Dict' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Dict.html">Dict</a></span></li></ul><ul class='nav-content' id='module:Actions' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-Actions.html">Actions</a></span></li></ul><ul class='nav-content' id='module:include' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-include.html">include</a></span></li></ul><ul class='nav-content' id='module:define' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-define.html">define</a></span></li></ul><ul class='nav-content' id='module:o2m' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-o2m.html">o2m</a></span></li></ul><ul class='nav-content' id='module:wait' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-module" title="module">M</span><span class="nav-item-name is-module" ><a href="module-wait.html">wait</a></span></li></ul></ul></ul><ul><li class="nav-heading">Classes</li><li class='nav-category'>FormComponents</li><ul class='nav-category-content' style='margin-left: 10px; '><ul class='nav-content' id='MWF.xApplication.process.Xform.$Input' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Input.html">$Input</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.$Module' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.$Module.html">$Module</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Actionbar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Actionbar.html">Actionbar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Address' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Address.html">Address</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Attachment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Attachment.html">Attachment</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Button' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Button.html">Button</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Calendar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Calendar.html">Calendar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Checkbox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Checkbox.html">Checkbox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Combox' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Combox.html">Combox</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Common' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Common.html">Common</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridMobile.html">DatagridMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatagridPC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatagridPC.html">DatagridPC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatableMobile' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatableMobile.html">DatatableMobile</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.DatatablePC' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.DatatablePC.html">DatatablePC</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Datatemplate' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Datatemplate.html">Datatemplate</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Div' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Div.html">Div</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Documenteditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Documenteditor.html">Documenteditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Form' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Form.html">Form</a></span></li></ul><ul class='nav-content' id='PortalPage' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="PortalPage.html">PortalPage</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Htmleditor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Htmleditor.html">Htmleditor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Iframe' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Iframe.html">Iframe</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Image' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Image.html">Image</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ImageClipper' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ImageClipper.html">ImageClipper</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Importer' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Importer.html">Importer</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Label' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Label.html">Label</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Log' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Log.html">Log</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Monitor' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Monitor.html">Monitor</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Number' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Number.html">Number</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Office' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Office.html">Office</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Opinion' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Opinion.html">Opinion</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Org' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Org.html">Org</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Radio' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Radio.html">Radio</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ReadLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ReadLog.html">ReadLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Select' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Select.html">Select</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Sidebar' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Sidebar.html">Sidebar</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Source' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Source.html">Source</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SourceText' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SourceText.html">SourceText</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Stat' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Stat.html">Stat</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Statement' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Statement.html">Statement</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.StatementSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.StatementSelector.html">StatementSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.SubSource' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.SubSource.html">SubSource</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Subform' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Subform.html">Subform</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tab' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tab.html">Tab</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table.html">Table</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Table$Td' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Table$Td.html">Table$Td</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textarea' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textarea.html">Textarea</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Textfield' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Textfield.html">Textfield</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Tree' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Tree.html">Tree</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.View' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.View.html">View</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.ViewSelector' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.ViewSelector.html">ViewSelector</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.process.Xform.Widget' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.process.Xform.Widget.html">Widget</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Author' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Author.html">Author</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Comment' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Comment.html">Comment</a></span></li></ul><ul class='nav-content' id='CMSForm' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSForm.html">CMSForm</a></span></li></ul><ul class='nav-content' id='CMSLog' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="CMSLog.html">CMSLog</a></span></li></ul><ul class='nav-content' id='MWF.xApplication.cms.Xform.Reader' style='padding: 0px;margin: 0px 0px 0px 10px;'><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class" ><a href="MWF.xApplication.cms.Xform.Reader.html">Reader</a></span></li></ul></ul></ul></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#ViewFilter">ViewFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementFilter">StatementFilter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#StatementParameter">StatementParameter</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#GroupFlag">GroupFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#PersonFlag">PersonFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#RoleFlag">RoleFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#IdentityFlag">IdentityFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#UnitFlag">UnitFlag</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatagridData">DatagridData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatableData">DatatableData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#DatatemplateData">DatatemplateData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef" ><a href="global.html#TreeData">TreeData</a></span></li>
+    
+  </nav>
+</header>
+
+
+<main class="layout-main  layout-content--source">
+  <div class="container">
+    <p class="page-kind">source</p>
+    <h1 class="page-title">x_component_process_Xform/Htmleditor.js</h1>
+    
+
+
+
+    
+
+<section>
+    <article>
+        <pre id="source" class="source-page line-numbers"><code class="language-js">MWF.xDesktop.requireApp("process.Xform", "$Module", null, false);
+/** @class Htmleditor HTML编辑器。
+ * @example
+ * //可以在脚本中获取该组件
+ * //方法1：
+ * var htmlEditor = this.form.get("name"); //获取组件
+ * //方法2
+ * var htmlEditor = this.target; //在组件事件脚本中获取
+ * @extends MWF.xApplication.process.Xform.$Module
+ * @o2category FormComponents
+ * @o2range {Process|CMS}
+ * @hideconstructor
+ */
+MWF.xApplication.process.Xform.Htmleditor = MWF.APPHtmleditor =  new Class(
+    /** @lends MWF.xApplication.process.Xform.Htmleditor# */
+    {
+	Extends: MWF.APP$Module,
+    options: {
+        "moduleEvents": ["load", "postLoad", "afterLoad"]
+    },
+    initialize: function(node, json, form, options){
+        this.node = $(node);
+        this.node.store("module", this);
+        this.json = json;
+        this.form = form;
+        this.field = true;
+    },
+    load: function(){
+
+        if (this.fireEvent("queryLoad")){
+            this._queryLoaded();
+            this._loadUserInterface();
+            this._loadStyles();
+            //this._loadEvents();
+
+            this._afterLoaded();
+            this.fireEvent("postLoad");
+            this.fireEvent("load");
+        }
+    },
+
+	_loadUserInterface: function(){
+		this.node.empty();
+        if (this.readonly){
+            this.node.set("html", this._getBusinessData());
+            this.node.setStyles({
+                "-webkit-user-select": "text",
+                "-moz-user-select": "text"
+            });
+            //移动端设置图片宽度为100%
+            if( layout.mobile ){
+                this.node.getElements("img").each( function( img ){
+                    //if( img.height )img.erase("height");
+                    img.setStyles({
+                        "height": "auto",
+                        "max-width" : "100%"
+                    });
+                }.bind(this))
+            }
+        }else{
+            var config = Object.clone(this.json.editorProperties);
+            if (this.json.config){
+                if (this.json.config.code){
+                    var obj = this.form.Macro.exec(this.json.config.code, this);
+                    Object.each(obj, function(v, k){
+                        config[k] = v;
+                    });
+                }
+            }
+            this.loadCkeditor(config);
+        }
+    //    this._loadValue();
+	},
+    loadCkeditor: function(config){
+        COMMON.AjaxModule.loadDom("ckeditor", function(){
+            CKEDITOR.disableAutoInline = true;
+            var editorDiv = new Element("div").inject(this.node);
+            var htmlData = this._getBusinessData();
+            if (htmlData){
+                editorDiv.set("html", htmlData);
+            }else if (this.json.templateCode){
+                editorDiv.set("html", this.json.templateCode);
+            }
+            var height = this.node.getSize().y;
+            var editorConfig = config || {};
+
+            if (this.form.json.mode==="Mobile"){
+                if (!editorConfig.toolbar &amp;&amp; !editorConfig.toolbarGroups){
+                    editorConfig.toolbar = [
+                        { name: 'paragraph',   items: [ 'Bold', 'Italic', "-" , 'TextColor', "BGColor", 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', "-", 'Undo', 'Redo' ] },
+                        { name: 'basicstyles', items: [ 'Styles', 'FontSize']},
+                        { name: 'insert', items : [ 'Image' ] }
+                    ];
+                }
+            }
+
+            editorConfig.base64Encode = (this.json.base64Encode === "y");
+            editorConfig.localImageMaxWidth = 800;
+            editorConfig.reference = this.form.businessData.work.job;
+            editorConfig.referenceType = "processPlatformJob";
+            if( editorConfig &amp;&amp; editorConfig.extraPlugins ){
+                var extraPlugins = editorConfig.extraPlugins;
+                extraPlugins = typeOf( extraPlugins ) === "array" ? extraPlugins : extraPlugins.split(",");
+                extraPlugins.push( 'pagebreak' );
+                editorConfig.extraPlugins = extraPlugins;
+            }else{
+                editorConfig.extraPlugins = ['pagebreak'];
+            }
+            
+            // CKEDITOR.basePath = COMMON.contentPath+"/res/framework/htmleditor/ckeditor/";
+            // CKEDITOR.plugins.basePath = COMMON.contentPath+"/res/framework/htmleditor/ckeditor/plugins/";
+            this.editor = CKEDITOR.replace(editorDiv, editorConfig);
+
+            this.editor.addCommand("ecnet", {
+                exec:function(editor){
+                    this.ecnet();
+                }.bind(this)
+            });
+            this.editor.ui.add('ecnet', CKEDITOR.UI_BUTTON, {
+                label:MWF.xApplication.process.Xform.LP.intelligentCorrection,
+                icon: '../x_component_process_Xform/$Form/default/icon/ecnet.png',
+                command:"ecnet"
+            });
+
+            this._loadEvents();
+            //this.editor.on("loaded", function(){
+            //    this._loadEvents();
+            //}.bind(this));
+
+            //this.setData(data)
+
+            this.editor.on("change", function(){
+                //this._setBusinessData(this.getData());
+            }.bind(this));
+
+            if (this.json.ecnet==="y"){
+                // this.editor.on( "key", function( evt ) {
+                //     // var char = evt.data.domEvent.$.char;
+                //     // if ([".", ",", "?", ";", "'", " "].indexOf(char)!==-1){
+                //     //     this.ecnet(evt.editor.getData());
+                //     // }
+                // }.bind(this));
+                // this.editor.on("blur", function(){
+                //     if (!this.notEcnetFlag) this.ecnet(this.getData());
+                // }.bind(this));
+            }
+
+
+            //    this._loadEvents();
+        }.bind(this));
+    },
+    getEcnetString: function(node, nodes){
+        for (var i=0; i&lt;node.childNodes.length; i++){
+            if (node.childNodes[i].nodeType===Node.TEXT_NODE){
+                var s = this.ecnetString.length;
+                this.ecnetString += node.childNodes[i].nodeValue;
+                var e = this.ecnetString.length;
+
+                nodes.push({
+                    "pnode": node,
+                    "node": node.childNodes[i],
+                    "start": s, "end": e
+                });
+            }else{
+                this.getEcnetString(node.childNodes[i], nodes);
+            }
+        }
+    },
+    createEcnetNode: function(node){
+        var newNode = node.node.ownerDocument.createElement("span");
+
+        var increment = 0;
+        var html = node.node.nodeValue;;
+        node.ecnets.each(function(ecnet){
+            var s = ecnet.begin+increment-node.start;
+            var e = ecnet.end+increment-node.start;
+            if (s&lt;0) s=0;
+            if (e>node.end+increment) e = node.end+increment;
+            var length = html.length;
+
+            var left = html.substring(0, s);
+            var ecnetStr = html.substring(s, e);
+            var right = html.substring(e, html.length);
+
+            html = left+"&lt;span class='o2_ecnet_item' style='color: red'>&lt;u>"+ecnetStr+"&lt;/u>&lt;/span>"+right;
+            increment += (html.length-length);
+
+        }.bind(this));
+        newNode.innerHTML = html;
+        node.pnode.replaceChild(newNode, node.node);
+        node.pnode.textNode = node.node;
+        node.pnode.ecnetNode = newNode;
+
+        var _self = this;
+        var editorFrame = this.editor.document.$.defaultView.frameElement;
+        var spans = newNode.getElementsByTagName("span");
+        if (spans.length){
+            for (var i = 0; i&lt;spans.length; i++){
+                var span = spans[i];
+                if (span.className==="o2_ecnet_item"){
+                    var ecnetNode = new Element("div", {"styles": {
+                        "border": "1px solid #999999",
+                        "box-shadow": "0px 0px 5px #999999",
+                        "background-color": "#ffffff",
+                        "position": "fixed",
+                        "display": "none"
+                    }}).inject(editorFrame, "after");
+                    var correctNode = new Element("div", {
+                        "styles": {
+                            "padding": "3px 10px",
+                            "font-weight": "bold",
+                            "font-size": "12px",
+                            "cursor": "pointer"
+                        },
+                        "text": node.ecnets[i].origin+"->"+node.ecnets[i].correct,
+                        "events": {
+                            "mouseover": function(){this.setStyle("background-color", "#dddddd")},
+                            "mouseout": function(){this.setStyle("background-color", "#ffffff")},
+                            "mousedown": function(){
+                                var ecnetNode = this.getParent();
+                                var node = ecnetNode.node;
+                                var item = ecnetNode.node.ecnets[ecnetNode.idx];
+                                var textNode = node.node.ownerDocument.createTextNode(item.correct);
+                                ecnetNode.span.parentNode.replaceChild(textNode, ecnetNode.span);
+                                ecnetNode.destroy();
+                                node.node.nodeValue = node.pnode.ecnetNode.innerText;
+
+                                node.ecnets.erase(item);
+                                if (!node.ecnets.length){
+                                    _self.ecnetNodes.erase(node);
+                                }
+                            }
+                        }
+                    }).inject(ecnetNode);
+                    var ignoreNode = new Element("div", {
+                        "styles": {
+                            "padding": "3px 10px",
+                            "font-size": "12px",
+                            "cursor": "pointer"
+                        },
+                        "text": MWF.xApplication.process.Xform.LP.ignore,
+                        "events": {
+                            "mouseover": function(){this.setStyle("background-color", "#dddddd")},
+                            "mouseout": function(){this.setStyle("background-color", "#ffffff")},
+                            "mousedown": function(){
+                                var ecnetNode = this.getParent();
+                                var node = ecnetNode.node;
+                                var item = ecnetNode.node.ecnets[ecnetNode.idx];
+                                var textNode = node.node.ownerDocument.createTextNode(ecnetNode.span.innerText);
+                                ecnetNode.span.parentNode.replaceChild(textNode, ecnetNode.span);
+                                ecnetNode.destroy();
+                                node.node.nodeValue = node.pnode.ecnetNode.innerText;
+
+                                node.ecnets.erase(item);
+                                if (!node.ecnets.length){
+                                    _self.ecnetNodes.erase(node);
+                                }
+                            }
+                        }
+                    }).inject(ecnetNode);
+                    ecnetNode.node = node;
+                    ecnetNode.idx = i;
+
+                    span.ecnetNode = ecnetNode;
+                    ecnetNode.span = span;
+                    span.addEventListener("click", function(){
+                        var ecnetNode = this.ecnetNode;
+                        ecnetNode.show();
+                        var y = this.offsetTop;
+                        var x = this.offsetLeft;
+                        var w = this.offsetWidth;
+                        var h = this.offsetHeight;
+                        var p = editorFrame.getPosition();
+                        var s = ecnetNode.getSize();
+                        var top = y+p.y+h+5;
+                        var left = x+p.x-((s.x-w)/2);
+
+                        ecnetNode.style.left = ""+left+"px";
+                        ecnetNode.style.top = ""+top+"px";
+
+                        var _span = this;
+                        var hideEcnetNode = function(){
+                            ecnetNode.hide();
+                            _span.ownerDocument.removeEventListener("mousedown", hideEcnetNode);
+                        };
+                        this.ownerDocument.addEventListener("mousedown", hideEcnetNode);
+
+                    });
+
+                }
+            }
+        }
+
+        //node.pnode.ecnetInforNode = ecnetNode;
+
+        // var spans = newNode.getElementsByTagName("span");
+        // if (spans.length){
+        //     var span = spans[0];
+        //     span.addEventListener("click", function(){
+        //         ecnetNode.style.display = "block";
+        //         var y = span.offsetTop;
+        //         var x = span.offsetLeft;
+        //         var w = span.offsetWidth;
+        //         var h = span.offsetHeight;
+        //         var p = editorFrame.getPosition();
+        //         var s = ecnetNode.getSize();
+        //         var top = y+p.y+h+5;
+        //         var left = x+p.x-((s.x-w)/2);
+        //
+        //         ecnetNode.style.left = ""+left+"px";
+        //         ecnetNode.style.top = ""+top+"px";
+        //     });
+        //     span.addEventListener("mouseout", function(){});
+        // }
+
+    },
+    clearEcnetNodes: function(){
+        if (this.ecnetNodes &amp;&amp; this.ecnetNodes.length){
+            this.ecnetNodes.each(function(node){
+                if (node.pnode.ecnetNode){
+                    if (node.pnode.ecnetInforNode) node.pnode.ecnetInforNode.destroy();
+                    node.pnode.ecnetInforNode = null;
+                    node.pnode.replaceChild(node.pnode.textNode, node.pnode.ecnetNode);
+                }
+            }.bind(this));
+            this.ecnetNodes = [];
+        }
+    },
+    ecnet: function(data){
+        //this.editor.document.$.body.innerText
+        var editorFrame = this.editor.document.$.defaultView.frameElement;
+        //var data = this.editor.getData();
+        var body = this.editor.document.$.body;
+
+        if (!this.ecnetNodes) this.ecnetNodes = [];
+        if (this.ecnetNodes.length) this.clearEcnetNodes();
+
+        var nodes = [];
+        this.ecnetString = "";
+        this.getEcnetString(body, nodes);
+
+        MWF.Actions.get("x_general_assemble_control").ecnetCheck({"value": this.ecnetString}, function(json){
+            if (json.data.itemList &amp;&amp; json.data.itemList.length){
+
+                nodes.each(function(node){
+                    var items = [];
+                    json.data.itemList.each(function(item){
+                        if ((node.end&lt;=item.end &amp;&amp; node.end>item.begin) || (node.start>=item.begin &amp;&amp; node.start&lt;item.end) || (node.start&lt;=item.begin &amp;&amp; node.end>item.end)){
+                            items.push(item);
+                        }
+                    }.bind(this));
+                    if (items.length){
+                        node.ecnets = items;
+                        this.ecnetNodes.push(node);
+                    }
+                }.bind(this));
+
+
+                this.ecnetNodes.each(function(node){
+                    this.createEcnetNode(node);
+                }.bind(this));
+
+
+                // var item = json.data.itemList[0];
+                // var left = data.substring(0, item.begin);
+                // var ecnetStr = data.substring(item.begin, item.end);
+                // var right = data.substring(item.end, data.length);
+                //
+                // var newData = left+"&lt;span class='o2_ecnet_item' style='color:red' title='"+item.origin+"->"+item.correc+"'>&lt;u>"+ecnetStr+"&lt;/u>&lt;/span>"+right;
+                //this.editor.document.$.body.setSelectionRange(item.begin, item.end);
+                //this.editor.setData(newData);
+
+                // var iframe = editorFrame.clone();
+                // iframe.inject(this.node);
+                // iframe.position({
+                //     "relativeTo": editorFrame,
+                //     "position": 'upperLeft',
+                //     "edge": 'upperLeft'
+                // });
+                // iframe.contentWindow.document.body.set("html", newData);
+            }else{
+                body = null;
+                nodes = null;
+            }
+        }.bind(this));
+    },
+    _loadEvents: function(editorConfig){
+        Object.each(this.json.events, function(e, key){
+            if (e.code){
+                this.editor.on(key, function(event){
+                    return this.form.Macro.fire(e.code, this, event);
+                }.bind(this), this);
+            }
+        }.bind(this));
+
+    },
+    addModuleEvent: function(key, fun){
+        this.editor.on(key, function(event){
+            return (fun) ? fun(this, event) : null;
+        }.bind(this), this);
+    },
+    _loadValue: function(){
+        var data = this._getBusinessData();
+    },
+    /**
+     * @summary 重置组件的值为默认值或置空。
+     *  @example
+     * this.form.get('fieldId').resetData();
+     */
+    resetData: function(){
+        this.setData(this._getBusinessData());
+    },
+    /**
+     * @summary 判断组件值是否为空.
+     * @example
+     * if( this.form.get('fieldId').isEmpty() ){
+     *     this.form.notice('HTML编辑器不能为空', 'warn');
+     * }
+     * @return {Boolean} 值是否为空.
+     */
+    isEmpty : function(){
+        return !this.getData().trim();
+    },
+    /**
+     * 当表单上没有对应组件的时候，可以使用this.data[fieldId]获取值，但是this.form.get('fieldId')无法获取到组件。
+     * @summary 获取组件值。
+     * @example
+     * var data = this.form.get('fieldId').getData();
+     * @example
+     *  //如果无法确定表单上是否有组件，需要判断
+     *  var data;
+     *  if( this.form.get('fieldId') ){ //判断表单是否有无对应组件
+     *      data = this.form.get('fieldId').getData();
+     *  }else{
+     *      data = this.data['fieldId']; //直接从数据中获取字段值
+     *  }
+     * @return 组件的数据.
+     */
+    getData: function(){
+        this.clearEcnetNodes();
+        return this.editor ? this.editor.getData() : "";
+    },
+    /**
+     * 当表单上没有对应组件的时候，可以使用this.data[fieldId] = data赋值。
+     * @summary 为组件赋值。
+     * @param data{String} .
+     * @example
+     *  this.form.get("fieldId").setData("test"); //赋文本值
+     * @example
+     *  //如果无法确定表单上是否有组件，需要判断
+     *  if( this.form.get('fieldId') ){ //判断表单是否有无对应组件
+     *      this.form.get('fieldId').setData( data );
+     *  }else{
+     *      this.data['fieldId'] = data;
+     *  }
+     */
+    setData: function(data){
+        this._setBusinessData(data);
+        if (this.editor) this.editor.setData(data);
+    },
+    createErrorNode: function(text){
+        var node = new Element("div");
+        var iconNode = new Element("div", {
+            "styles": {
+                "width": "20px",
+                "height": "20px",
+                "float": "left",
+                "background": "url("+"../x_component_process_Xform/$Form/default/icon/error.png) center center no-repeat"
+            }
+        }).inject(node);
+        var textNode = new Element("div", {
+            "styles": {
+                "line-height": "20px",
+                "margin-left": "20px",
+                "color": "red",
+                "word-break": "keep-all"
+            },
+            "text": text
+        }).inject(node);
+        return node;
+    },
+    notValidationMode: function(text){
+        if (!this.isNotValidationMode){
+            this.isNotValidationMode = true;
+            this.node.store("borderStyle", this.node.getStyles("border-left", "border-right", "border-top", "border-bottom"));
+            this.node.setStyle("border", "1px solid red");
+
+            this.errNode = this.createErrorNode(text).inject(this.node, "after");
+            this.showNotValidationMode(this.node);
+            if (!this.node.isIntoView()) this.node.scrollIntoView();
+        }
+    },
+    showNotValidationMode: function(node){
+        var p = node.getParent("div");
+        if (p){
+            if (p.get("MWFtype") == "tab$Content"){
+                if (p.getParent("div").getStyle("display")=="none"){
+                    var contentAreaNode = p.getParent("div").getParent("div");
+                    var tabAreaNode = contentAreaNode.getPrevious("div");
+                    var idx = contentAreaNode.getChildren().indexOf(p.getParent("div"));
+                    var tabNode = tabAreaNode.getLast().getFirst().getChildren()[idx];
+                    tabNode.click();
+                    p = tabAreaNode.getParent("div");
+                }
+            }
+            this.showNotValidationMode(p);
+        }
+    },
+    validationMode: function(){
+        if (this.isNotValidationMode){
+            this.isNotValidationMode = false;
+            this.node.setStyles(this.node.retrieve("borderStyle"));
+            if (this.errNode){
+                this.errNode.destroy();
+                this.errNode = null;
+            }
+        }
+    },
+
+    validationConfigItem: function(routeName, data){
+        var flag = (data.status=="all") ? true: (routeName == data.decision);
+        if (flag){
+            var n = this.getData();
+            var v = (data.valueType=="value") ? n : n.length;
+            switch (data.operateor){
+                case "isnull":
+                    if (!v){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "notnull":
+                    if (v){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "gt":
+                    if (v>data.value){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "lt":
+                    if (v&lt;data.value){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "equal":
+                    if (v==data.value){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "neq":
+                    if (v!=data.value){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "contain":
+                    if (v.indexOf(data.value)!=-1){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+                case "notcontain":
+                    if (v.indexOf(data.value)==-1){
+                        this.notValidationMode(data.prompt);
+                        return false;
+                    }
+                    break;
+            }
+        }
+        return true;
+    },
+    validationConfig: function(routeName, opinion){
+        if (this.json.validationConfig){
+            if (this.json.validationConfig.length){
+                for (var i=0; i&lt;this.json.validationConfig.length; i++) {
+                    var data = this.json.validationConfig[i];
+                    if (!this.validationConfigItem(routeName, data)) return false;
+                }
+            }
+            return true;
+        }
+        return true;
+    },
+    /**
+     * @summary 根据组件的校验设置进行校验。
+     *  @param {String} [routeName] - 可选，路由名称.
+     *  @example
+     *  if( !this.form.get('fieldId').validation() ){
+     *      return false;
+     *  }
+     *  @return {Boolean} 是否通过校验
+     */
+    validation: function(routeName, opinion){
+        if (!this.validationConfig(routeName, opinion))  return false;
+
+        if (!this.json.validation) return true;
+        if (!this.json.validation.code) return true;
+
+        this.currentRouteName = routeName;
+        var flag = this.form.Macro.exec(this.json.validation.code, this);
+        this.currentRouteName = "";
+
+        if (!flag) flag = MWF.xApplication.process.Xform.LP.notValidation;
+        if (flag.toString()!="true"){
+            this.notValidationMode(flag);
+            return false;
+        }
+        return true;
+    }
+}); </code></pre>
+    </article>
+</section>
+
+
+
+
+  </div>
+</main>
+
+
+      <div class="api-search-results layout-main" id="api-search-results">
+    <div class="container">
+        <div class="search-noresults"></div>
+        <div class="search-results">
+            <div class="has-results">
+                <h1 class="search-results-title">
+                    <span class='search-results-count'></span> results matching <span class='search-query'></span>
+                </h1>
+                <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+                <h1 class="search-results-title">
+                    No results matching '<span class='search-query'></span>'
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jul 05 2021 19:18:04 GMT+0800 (GMT+08:00)
+  </div>
+</footer>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/prism.dev.js"></script>
+<script src="scripts/init.js" defer></script>
+
+    <script src="scripts/jquery.mark.min.js"></script>
+    <script src="scripts/search.js" defer></script>
+
+
+</body>
+</html>
