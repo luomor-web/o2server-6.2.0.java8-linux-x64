@@ -15,6 +15,8 @@ services:
       - ./db/init-sql:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root
+    networks:
+      - o2oa-network
     restart: always
   o2server:
     build:
@@ -27,4 +29,10 @@ services:
       - ./o2server/configSample:/o2server/configSample
     depends_on:
       - o2server-mysql80
+    networks:
+      - o2oa-network
     restart: always
+
+networks:
+  o2oa-network:
+    external: true
