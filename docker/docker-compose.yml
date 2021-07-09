@@ -26,6 +26,8 @@ services:
     ports:
       - "8010:80"
       - "20030:20030"
+      - "20040:20040"
+      - "20050:20050"
     volumes:
       - ./o2server/configSample:/o2server/configSample
     depends_on:
