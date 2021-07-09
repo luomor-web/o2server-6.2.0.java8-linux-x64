@@ -25,9 +25,11 @@ services:
     container_name: o2server-fe
     ports:
       - "8010:80"
+      - "20020:20020"
       - "20030:20030"
       - "20040:20040"
       - "20050:20050"
+      - "20080:20080"
     volumes:
       - ./o2server/configSample:/o2server/configSample
     depends_on:
