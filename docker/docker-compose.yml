@@ -32,6 +32,7 @@ services:
       - "20080:20080"
     volumes:
       - ./o2server/configSample:/o2server/configSample
+      - ./o2server/localSample:/o2server/localSample
     depends_on:
       - o2server-mysql80
     networks:
