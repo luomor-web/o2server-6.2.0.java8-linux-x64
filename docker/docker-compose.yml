@@ -1,0 +1,30 @@
+version: '3'
+services:
+  o2server-mysql80:
+    image: mysql:8.0
+    container_name: o2server-mysql
+    ports:
+      - "3311:3306"
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/data:/var/lib/mysql
+      - ./db/init-sql:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+  o2server:
+    build:
+      context: ../o2server-6.2.0.java8-linux-x64
+      dockerfile: Dockerfile
+    container_name: o2server-fe
+    ports:
+      - "8010:80"
+    volumes:
+      - ./o2server/configSample:/o2server/configSample
+    depends_on:
+      - o2server-mysql80
+    restart: always
