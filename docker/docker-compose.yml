@@ -33,6 +33,10 @@ services:
     volumes:
       - ./o2server/configSample:/o2server/configSample
       - ./o2server/localSample:/o2server/localSample
+      - ./o2server/config:/o2server/config
+      - ./o2server/custom:/o2server/custom
+      - ./o2server/local:/o2server/local
+      - ./o2server/logs:/o2server/logs
     depends_on:
       - o2server-mysql80
     networks:
