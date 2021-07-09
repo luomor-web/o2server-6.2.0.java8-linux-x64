@@ -8,3 +8,5 @@ sudo docker-compose up -d
 
 sudo docker-compose build
 sudo docker-compose up -d o2server
+
+10.2.100.2:8010
